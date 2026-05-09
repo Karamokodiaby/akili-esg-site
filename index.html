@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKILI ESG — L'intelligence au service de la durabilité</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231B3228'/%3E%3Ctext x='16' y='23' font-family='Georgia%2C serif' font-size='20' font-weight='400' fill='%23C8853A' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="description" content="AKILI ESG accompagne les ETI et PME d'Afrique de l'Ouest dans la production de leurs rapports ESG — CSRD, Note 35 OHADA, VSME. Indice RADF exclusif. Abidjan, Côte d'Ivoire.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ========== STYLES COMPLETS (identiques à la version fonctionnelle) ========== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest: #1B3228; --forest-mid: #2D4A3E; --forest-light: #3D5E50;
+    --ochre: #C8853A; --ochre-light: #E0A55C;
+    --cream: #F5F0E6; --cream-dark: #EDE7D9; --sand: #D8CFBD;
+    --text: #1B3228; --text-muted: #5A6E63; --border: rgba(27,50,40,0.12);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--cream); color: var(--text); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 68px; background: rgba(245,240,230,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: box-shadow .3s; }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(27,50,40,0.08); }
+  .nav-logo { font-family: var(--font-display); color: var(--forest); cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+  .nav-logo-top { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 500; letter-spacing: .02em; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 6px; background: var(--forest); color: var(--ochre-light); border: 1px solid rgba(200,133,58,0.35); display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1; box-shadow: 0 8px 18px rgba(27,50,40,0.12); flex-shrink: 0; }
+  .nav-logo-dot { display: none; }
+  .nav-slogan { display: block; font-family: var(--font-body); font-size: 8px; letter-spacing: 0.06em; line-height: 1.25; text-transform: uppercase; color: var(--ochre); font-weight: 400; margin-left: 2px; }
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color .2s; cursor: pointer; }
+  .nav-links a:hover, .nav-links a.active { color: var(--forest); }
+  .nav-cta { font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--cream); background: var(--forest); border: none; padding: 10px 22px; border-radius: 2px; cursor: pointer; transition: background .2s; }
+  .nav-cta:hover { background: var(--forest-mid); }
+  .nav-demo-btn { font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ochre); background: transparent; border: 1px solid var(--ochre); padding: 9px 18px; border-radius: 2px; cursor: pointer; transition: all .2s; }
+  .nav-demo-btn:hover, .nav-demo-btn.active { background: var(--ochre); color: var(--cream); }
+
+  /* PAGES */
+  .page { display: none; padding-top: 68px; min-height: 100vh; }
+  .page.active { display: block; }
+
+  /* HISTOIRE (nouvelle page) */
+  .histoire-hero { background: var(--forest); padding: 96px 64px 80px; }
+  .histoire-hero .section-eyebrow { color: var(--ochre); }
+  .histoire-def { background: var(--cream-dark); padding: 80px 64px; border-bottom: 1px solid var(--border); }
+  .def-box { max-width: 800px; margin: 0 auto; text-align: center; font-family: var(--font-display); font-size: 24px; font-weight: 400; line-height: 1.4; color: var(--forest); border-left: 3px solid var(--ochre); padding-left: 32px; }
+  .def-box strong { color: var(--ochre); font-weight: 500; }
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 96px 64px; }
+  .story-text p { margin-bottom: 24px; }
+  .story-stats { background: var(--forest); padding: 64px; border-radius: 4px; color: var(--cream); }
+  .story-stats .stat-number { font-family: var(--font-display); font-size: 64px; font-weight: 300; color: var(--ochre); line-height: 1; }
+  @media (max-width: 900px) { .histoire-hero, .histoire-def, .story-grid { padding: 56px 24px; } .story-grid { grid-template-columns: 1fr; } }
+
+  /* ========== RESTE DES STYLES (inchangés, repris de votre code fonctionnel) ========== */
+  .hero { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(560px, 1.1fr); min-height: calc(100vh - 68px); }
+  .hero-left { background: var(--forest); padding: 80px 64px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+  .hero-left::before { content: 'A'; position: absolute; bottom: -40px; right: -20px; font-family: var(--font-display); font-size: 380px; font-weight: 300; color: rgba(255,255,255,0.04); pointer-events: none; }
+  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ochre); margin-bottom: 32px; }
+  .hero-title { font-family: var(--font-display); font-size: clamp(48px, 5vw, 72px); font-weight: 300; line-height: 1.1; color: var(--cream); margin-bottom: 40px; }
+  .hero-title em { font-style: italic; color: var(--ochre-light); }
+  .hero-tagline { font-size: 15px; font-weight: 300; color: rgba(245,240,230,0.65); line-height: 1.8; max-width: 400px; margin-bottom: 56px; }
+  .btn-primary, .btn-ghost { display: inline-block; font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; cursor: pointer; transition: all .2s; text-decoration: none; }
+  .btn-primary { background: var(--ochre); color: var(--cream); border: none; }
+  .btn-primary:hover { background: var(--ochre-light); }
+  .btn-ghost { background: transparent; color: rgba(245,240,230,0.7); border: 1px solid rgba(245,240,230,0.2); }
+  .btn-ghost:hover { color: var(--cream); border-color: rgba(245,240,230,0.5); }
+  .hero-stat { font-family: var(--font-display); font-size: 13px; color: rgba(245,240,230,0.4); }
+  .hero-right { background: var(--cream-dark); padding: 64px 48px; display: flex; flex-direction: column; justify-content: center; gap: 32px; }
+  .hero-product-shot { width: min(100%, 760px); margin: 0 auto; background: var(--cream); border: 1px solid rgba(27,50,40,0.12); border-radius: 6px; padding: 8px; box-shadow: 0 30px 70px rgba(27,50,40,0.18); transform: none; }
+  .hero-product-shot img { display: block; width: 100%; height: auto; border-radius: 4px; }
+  .hero-product-caption { margin-top: 12px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
+  .radf-card { background: var(--forest); border-radius: 4px; padding: 40px; position: relative; overflow: hidden; }
+  .radf-card::after { content: ''; position: absolute; top: 0; right: 0; width: 4px; height: 100%; background: var(--ochre); }
+  .radf-label { font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ochre); margin-bottom: 16px; }
+  .radf-title { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--cream); }
+  .radf-body { font-size: 13px; font-weight: 300; color: rgba(245,240,230,0.6); }
+  .radf-score-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 4px; overflow: hidden; margin-top: 28px; }
+  .score-cell { background: var(--cream); padding: 20px 16px; }
+  .score-val { font-family: var(--font-display); font-size: 32px; font-weight: 400; color: var(--forest); }
+  .score-val.high { color: var(--ochre); }
+  .score-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+  .home-references .ref-logos { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ref-pill { font-size: 12px; color: var(--text-muted); border: 1px solid var(--border); border-radius: 2px; padding: 6px 14px; background: var(--cream); }
+  .strip { background: var(--forest); padding: 40px 64px; display: flex; gap: 64px; flex-wrap: wrap; }
+  .strip-item .strip-num { font-family: var(--font-display); font-size: 40px; font-weight: 300; color: var(--ochre); }
+  .strip-desc { font-size: 12px; color: rgba(245,240,230,0.55); }
+  .home-about { display: grid; grid-template-columns: 1fr 1fr; }
+  .about-left, .about-right { padding: 96px 64px; }
+  .about-left { border-right: 1px solid var(--border); }
+  .section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ochre); margin-bottom: 20px; }
+  .section-title { font-family: var(--font-display); font-size: clamp(36px, 3.5vw, 52px); font-weight: 400; line-height: 1.15; color: var(--forest); margin-bottom: 28px; }
+  .body-text { font-size: 15px; font-weight: 300; color: var(--text-muted); line-height: 1.9; margin-bottom: 16px; }
+  .differentiators { display: flex; flex-direction: column; gap: 0; }
+  .diff-item { padding: 28px 0; border-bottom: 1px solid var(--border); display: flex; gap: 24px; }
+  .diff-num { font-family: var(--font-display); font-size: 15px; font-weight: 300; color: var(--ochre); min-width: 28px; }
+  .diff-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .diff-desc { font-size: 13px; font-weight: 300; color: var(--text-muted); }
+  .services-hero { background: var(--forest); padding: 96px 64px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+  .page-title { font-family: var(--font-display); font-size: clamp(48px, 5vw, 80px); font-weight: 300; line-height: 1.05; color: var(--cream); }
+  .page-intro { font-size: 15px; font-weight: 300; color: rgba(245,240,230,0.6); line-height: 1.9; }
+  .modules-grid { padding: 0 64px; border-bottom: 1px solid var(--border); }
+  .module-row { display: grid; grid-template-columns: 80px 1fr 1fr; gap: 0; border-bottom: 1px solid var(--border); transition: background .2s; }
+  .module-row:hover { background: var(--cream-dark); }
+  .module-num-cell { padding: 48px 32px; border-right: 1px solid var(--border); display: flex; align-items: flex-start; }
+  .module-num { font-family: var(--font-display); font-size: 13px; font-weight: 300; color: var(--ochre); }
+  .module-main { padding: 48px 40px; border-right: 1px solid var(--border); }
+  .module-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); border: 1px solid rgba(200,133,58,0.35); border-radius: 2px; padding: 3px 10px; margin-bottom: 16px; }
+  .module-name { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--forest); line-height: 1.25; margin-bottom: 12px; }
+  .module-desc { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.8; }
+  .module-detail { padding: 48px 40px; }
+  .module-detail-label { font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+  .module-deliverable { font-size: 13px; font-weight: 400; color: var(--forest); line-height: 1.7; }
+  .radf-section { display: grid; grid-template-columns: 1fr 1fr; background: var(--forest); margin: 0 64px; border-radius: 4px; overflow: hidden; margin-top: 80px; }
+  .radf-left { padding: 64px 56px; border-right: 1px solid rgba(245,240,230,0.1); }
+  .radf-right { padding: 64px 56px; }
+  .radf-section-title { font-family: var(--font-display); font-size: 40px; font-weight: 300; color: var(--cream); line-height: 1.2; margin-bottom: 24px; }
+  .radf-section-body { font-size: 14px; font-weight: 300; color: rgba(245,240,230,0.6); line-height: 1.9; }
+  .radf-pillars { display: flex; flex-direction: column; gap: 0; }
+  .radf-pillar { padding: 24px 0; border-bottom: 1px solid rgba(245,240,230,0.1); display: flex; gap: 20px; align-items: flex-start; }
+  .pillar-icon { width: 32px; height: 32px; border-radius: 50%; background: rgba(200,133,58,0.2); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--ochre); font-weight: 500; }
+  .pillar-name { font-size: 13px; font-weight: 500; color: var(--cream); margin-bottom: 2px; }
+  .pillar-desc { font-size: 12px; font-weight: 300; color: rgba(245,240,230,0.5); line-height: 1.6; }
+  .pricing-section { padding: 96px 64px; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: 4px; overflow: hidden; margin-top: 56px; }
+  .price-card { background: var(--cream); padding: 40px 32px; display: flex; flex-direction: column; gap: 8px; }
+  .price-card.featured { background: var(--forest); }
+  .price-tier { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+  .price-card.featured .price-tier { color: var(--ochre); }
+  .price-name { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--forest); line-height: 1; }
+  .price-card.featured .price-name { color: var(--cream); }
+  .price-amount { font-size: 14px; font-weight: 400; color: var(--ochre); margin: 8px 0; }
+  .price-includes { font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.9; }
+  .price-card.featured .price-includes { color: rgba(245,240,230,0.55); }
+  .team-hero { background: var(--cream-dark); padding: 96px 64px 80px; border-bottom: 1px solid var(--border); }
+  .team-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; }
+  .team-lead-card { background: var(--forest); border-radius: 4px; padding: 56px 48px; position: relative; overflow: hidden; }
+  .team-lead-card::before { content: ''; position: absolute; bottom: 0; right: 0; width: 120px; height: 120px; border-radius: 50%; background: rgba(200,133,58,0.15); transform: translate(30%, 30%); }
+  .founder-flex { display: flex; gap: 2.5rem; align-items: flex-start; flex-wrap: wrap; }
+  .founder-content { flex: 2; }
+  .founder-photo { flex: 0 0 200px; }
+  .founder-photo img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 12px 24px rgba(0,0,0,0.12); object-fit: cover; border: 1px solid rgba(245,240,230,0.2); }
+  @media (max-width: 750px) { .founder-flex { flex-direction: column; } .founder-photo { max-width: 220px; align-self: center; } }
+  .founder-tag { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ochre); margin-bottom: 20px; }
+  .founder-name { font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--cream); line-height: 1.15; margin-bottom: 16px; }
+  .founder-role { font-size: 13px; font-weight: 300; color: rgba(245,240,230,0.65); line-height: 1.85; }
+  .founder-expertise { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+  .expertise-tag { font-size: 11px; color: var(--ochre); border: 1px solid rgba(200,133,58,0.35); border-radius: 2px; padding: 4px 12px; }
+  .team-values { display: flex; flex-direction: column; gap: 0; }
+  .value-item { padding: 24px 0; border-bottom: 1px solid var(--border); display: flex; gap: 20px; }
+  .value-item:first-child { padding-top: 0; }
+  .value-item:last-child { border-bottom: none; }
+  .value-label { font-size: 13px; font-weight: 500; color: var(--forest); min-width: 100px; }
+  .value-desc { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+  .testimonials-section { padding: 96px 64px; background: var(--cream-dark); border-top: 1px solid var(--border); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 4px; overflow: hidden; margin-top: 56px; }
+  .testi-card { background: var(--cream); padding: 40px 36px; display: flex; flex-direction: column; gap: 20px; }
+  .testi-card:nth-child(2) { background: var(--forest); }
+  .testi-quote-mark { font-family: var(--font-display); font-size: 48px; line-height: 1; color: var(--ochre); opacity: 0.6; }
+  .testi-text { font-family: var(--font-display); font-size: 18px; font-weight: 400; font-style: italic; color: var(--forest); line-height: 1.55; }
+  .testi-card:nth-child(2) .testi-text { color: var(--cream); }
+  .testi-separator { width: 32px; height: 1px; background: var(--ochre); }
+  .testi-author { display: flex; flex-direction: column; gap: 3px; }
+  .testi-name { font-size: 13px; font-weight: 500; color: var(--forest); }
+  .testi-card:nth-child(2) .testi-name { color: var(--cream); }
+  .testi-company { font-size: 12px; font-weight: 300; color: var(--text-muted); }
+  .testi-card:nth-child(2) .testi-company { color: rgba(245,240,230,0.5); }
+  .testi-score { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; }
+  .testi-radf { font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); border: 1px solid rgba(200,133,58,0.4); border-radius: 2px; padding: 2px 8px; }
+  .ecosystem-section { padding: 96px 64px; }
+  .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 4px; overflow: hidden; margin-top: 56px; }
+  .eco-card { background: var(--cream); padding: 40px 32px; }
+  .eco-icon { width: 40px; height: 40px; background: var(--cream-dark); border-radius: 2px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--forest); font-weight: 500; }
+  .eco-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin-bottom: 8px; }
+  .eco-desc { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 68px); }
+  .contact-left { background: var(--forest); padding: 80px 64px; display: flex; flex-direction: column; justify-content: space-between; }
+  .contact-title { font-family: var(--font-display); font-size: clamp(40px, 4vw, 64px); font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 24px; }
+  .contact-title em { font-style: italic; color: var(--ochre-light); }
+  .contact-body { font-size: 14px; font-weight: 300; color: rgba(245,240,230,0.6); line-height: 1.9; margin-bottom: 48px; }
+  .contact-details { display: flex; flex-direction: column; gap: 20px; }
+  .contact-detail-item { display: flex; flex-direction: column; gap: 4px; }
+  .cd-label { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ochre); }
+  .cd-value, .cd-link { font-size: 14px; color: rgba(245,240,230,0.8); text-decoration: none; }
+  .contact-right { padding: 80px 64px; background: var(--cream-dark); display: flex; flex-direction: column; justify-content: center; }
+  .form-title { font-family: var(--font-display); font-size: 30px; font-weight: 400; color: var(--forest); margin-bottom: 36px; }
+  .form-grid { display: flex; flex-direction: column; gap: 20px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-label { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
+  .form-input, .form-select, .form-textarea { font-family: var(--font-body); font-size: 14px; font-weight: 300; padding: 12px 16px; background: var(--cream); border: 1px solid var(--border); border-radius: 2px; width: 100%; outline: none; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--ochre); }
+  .form-textarea { resize: vertical; min-height: 110px; }
+  .form-submit { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--cream); background: var(--forest); border: none; padding: 16px 36px; border-radius: 2px; cursor: pointer; align-self: flex-start; }
+  .form-submit:hover { background: var(--forest-mid); }
+  .form-note { font-size: 12px; font-weight: 300; color: var(--text-muted); margin-top: 12px; line-height: 1.6; }
+  .form-success { display: none; background: var(--forest); color: var(--cream); padding: 20px 24px; border-radius: 4px; font-size: 14px; margin-top: 16px; }
+  .faq-section { padding: 96px 64px; border-top: 1px solid var(--border); }
+  .faq-list { margin-top: 56px; display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-question { width: 100%; background: none; border: none; padding: 28px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; gap: 32px; }
+  .faq-q-text { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--forest); line-height: 1.3; }
+  .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--cream-dark); border: 1px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--ochre); transition: transform .3s, background .2s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--ochre); color: var(--cream); }
+  .faq-answer { display: none; padding: 0 0 28px 0; }
+  .faq-item.open .faq-answer { display: block; }
+  .faq-a-text { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.9; max-width: 680px; }
+  .faq-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); border: 1px solid rgba(200,133,58,0.35); border-radius: 2px; padding: 2px 10px; margin-bottom: 12px; }
+  footer { background: var(--forest); padding: 48px 64px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+  .footer-logo { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--cream); display: flex; align-items: center; gap: 10px; }
+  .footer-logo .brand-mark { width: 26px; height: 26px; border-radius: 5px; background: var(--cream); color: var(--forest); box-shadow: none; border-color: rgba(245,240,230,0.25); font-size: 18px; }
+  .footer-logo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ochre); }
+  .footer-links { display: flex; gap: 32px; list-style: none; }
+  .footer-links a { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: rgba(245,240,230,0.4); text-decoration: none; cursor: pointer; }
+  .footer-links a:hover { color: rgba(245,240,230,0.8); }
+  .footer-legal { font-size: 12px; color: rgba(245,240,230,0.3); }
+
+  .pertes-section { background: var(--forest); padding: 80px 64px; }
+  .pertes-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; gap: 40px; flex-wrap: wrap; }
+  .pertes-intro { font-size: 15px; font-weight: 300; color: rgba(245,240,230,0.55); line-height: 1.9; max-width: 420px; }
+  .pertes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(245,240,230,0.08); border-radius: 4px; overflow: hidden; }
+  .perte-card { background: rgba(255,255,255,0.03); padding: 36px 28px; display: flex; flex-direction: column; gap: 16px; transition: background .2s; }
+  .perte-card:hover { background: rgba(255,255,255,0.06); }
+  .perte-icon { font-size: 22px; opacity: 0.7; }
+  .perte-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--cream); line-height: 1.25; }
+  .perte-desc { font-size: 13px; font-weight: 300; color: rgba(245,240,230,0.5); line-height: 1.7; }
+  .perte-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); border: 1px solid rgba(200,133,58,0.3); border-radius: 2px; padding: 2px 10px; margin-top: auto; align-self: flex-start; }
+  .pertes-cta-row { display: flex; gap: 14px; margin-top: 48px; flex-wrap: wrap; }
+  .blog-hero { background: var(--forest); padding: 96px 64px 80px; }
+  .blog-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 40px; }
+  .blog-filter { font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); background: var(--cream); border: 1px solid var(--border); border-radius: 2px; padding: 8px 16px; cursor: pointer; transition: all .2s; }
+  .blog-filter.active, .blog-filter:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+  .blog-grid-section { padding: 64px; }
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .blog-card { background: var(--cream); padding: 36px 32px; display: flex; flex-direction: column; gap: 14px; cursor: pointer; transition: background .2s; }
+  .blog-card:hover { background: var(--cream-dark); }
+  .blog-card-meta { display: flex; align-items: center; gap: 10px; }
+  .blog-cat { font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); border: 1px solid rgba(200,133,58,0.35); border-radius: 2px; padding: 2px 10px; }
+  .blog-read-time { font-size: 11px; color: var(--text-muted); }
+  .blog-card-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--forest); line-height: 1.3; }
+  .blog-card-excerpt { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+  .blog-card-author { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); }
+  .blog-author-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--forest); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 12px; color: var(--cream); flex-shrink: 0; }
+  .blog-author-name { font-size: 12px; font-weight: 500; color: var(--forest); }
+  .blog-author-date { font-size: 11px; color: var(--text-muted); }
+  .blog-card-link { font-size: 12px; font-weight: 500; color: var(--ochre); letter-spacing: .04em; margin-top: 4px; }
+  .article-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(27,50,40,0.7); backdrop-filter: blur(4px); overflow-y: auto; }
+  .article-overlay.open { display: flex; justify-content: center; align-items: flex-start; padding: 40px 24px; }
+  .article-modal { background: var(--cream); max-width: 760px; width: 100%; border-radius: 4px; overflow: hidden; }
+  .article-modal-header { background: var(--forest); padding: 48px 56px 40px; position: relative; }
+  .article-modal-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: rgba(245,240,230,0.5); font-size: 22px; cursor: pointer; transition: color .2s; }
+  .article-modal-close:hover { color: var(--cream); }
+  .article-modal-cat { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ochre); margin-bottom: 16px; }
+  .article-modal-title { font-family: var(--font-display); font-size: clamp(28px, 3vw, 42px); font-weight: 300; color: var(--cream); line-height: 1.15; margin-bottom: 20px; }
+  .article-modal-meta { font-size: 12px; color: rgba(245,240,230,0.45); margin-top: 8px; }
+  .article-modal-body { padding: 48px 56px; }
+  .article-modal-body h3 { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--forest); margin: 32px 0 12px; }
+  .article-modal-body p { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.9; margin-bottom: 16px; }
+  .article-modal-body ul { padding-left: 20px; margin-bottom: 16px; }
+  .article-modal-body li { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.9; margin-bottom: 6px; }
+  .article-modal-body strong { color: var(--forest); font-weight: 500; }
+
+  /* ── DEMO PAGE ── */
+  /* ── PAGE DÉMO PRODUIT ── */
+  .demo-hero { background: var(--forest); padding: 80px 64px 64px; text-align: center; }
+  .demo-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); border: 1px solid rgba(200,133,58,0.3); border-radius: 2px; padding: 5px 14px; margin-bottom: 32px; }
+  .demo-hero h1 { font-family: var(--font-display); font-size: clamp(36px, 4vw, 60px); font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 20px; }
+  .demo-hero h1 em { font-style: italic; color: var(--ochre-light); }
+  .demo-hero p { font-size: 15px; font-weight: 300; color: rgba(245,240,230,0.65); max-width: 560px; margin: 0 auto 40px; line-height: 1.8; }
+  .demo-hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-demo-primary { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--cream); background: var(--ochre); border: none; padding: 14px 28px; border-radius: 2px; cursor: pointer; text-decoration: none; transition: background .2s; }
+  .btn-demo-primary:hover { background: var(--ochre-light); }
+  .btn-demo-ghost { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: rgba(245,240,230,0.75); background: transparent; border: 1px solid rgba(245,240,230,0.2); padding: 13px 28px; border-radius: 2px; cursor: pointer; text-decoration: none; transition: all .2s; }
+  .btn-demo-ghost:hover { color: var(--cream); border-color: rgba(245,240,230,0.5); }
+
+  /* Mockup produit */
+  .demo-mockup-wrap { background: var(--cream-dark); padding: 72px 32px 0; }
+  .demo-browser { background: #fff; border-radius: 8px 8px 0 0; box-shadow: 0 28px 80px rgba(27,50,40,0.18); overflow: hidden; width: min(1320px, calc(100vw - 64px)); margin: 0 auto; }
+  .demo-browser-bar { background: #F0EDE8; padding: 12px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #E2DDD5; }
+  .demo-browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .demo-browser-url { flex: 1; background: #fff; border-radius: 4px; padding: 5px 12px; font-size: 11px; color: #8A8076; font-family: 'DM Mono', monospace, sans-serif; margin: 0 12px; }
+  .demo-screen { display: flex; min-height: 400px; }
+  .demo-product-image { display: block; width: 100%; height: auto; border-radius: 0 0 8px 8px; }
+  .demo-sidebar { width: 180px; background: #1B3228; padding: 20px 0; flex-shrink: 0; }
+  .demo-sidebar-logo { padding: 0 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 12px; }
+  .demo-sidebar-logo span { font-family: var(--font-display); font-size: 15px; color: var(--cream); font-weight: 500; }
+  .demo-sidebar-logo small { display: block; font-size: 9px; color: rgba(245,240,230,0.4); letter-spacing: .06em; text-transform: uppercase; }
+  .demo-sidebar-item { padding: 9px 16px; font-size: 11px; color: rgba(245,240,230,0.5); cursor: pointer; display: flex; align-items: center; gap: 8px; }
+  .demo-sidebar-item.active { background: rgba(200,133,58,0.15); color: var(--ochre-light); border-left: 2px solid var(--ochre); }
+  .demo-sidebar-section { padding: 16px 16px 6px; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: rgba(245,240,230,0.25); }
+  .demo-content { flex: 1; padding: 24px 28px; background: #F7F5F1; }
+  .demo-breadcrumb { font-size: 10px; color: #8A8076; margin-bottom: 16px; }
+  .demo-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+  .demo-tag { font-size: 9px; font-weight: 500; padding: 3px 8px; border-radius: 3px; letter-spacing: .04em; }
+  .demo-tag-green { background: #D4EDD9; color: #1B5E27; }
+  .demo-tag-blue { background: #D4E3F5; color: #1B3A6E; }
+  .demo-tag-ochre { background: #F5E6D0; color: #8B5A1A; }
+  .demo-tag-grey { background: #E8E4DC; color: #5A5040; }
+  .demo-indicator-title { font-size: 15px; font-weight: 500; color: #1B3228; margin-bottom: 4px; line-height: 1.4; }
+  .demo-indicator-sub { font-size: 10px; color: #8A8076; font-style: italic; margin-bottom: 16px; }
+  .demo-tabs { display: flex; gap: 0; border-bottom: 1px solid #E2DDD5; margin-bottom: 20px; }
+  .demo-tab { font-size: 11px; padding: 8px 16px; color: #8A8076; border-bottom: 2px solid transparent; cursor: pointer; }
+  .demo-tab.active { color: #1B3228; border-bottom-color: #1B3228; font-weight: 500; }
+  .demo-fields { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; }
+  .demo-field { background: #fff; border: 1px solid #E2DDD5; border-radius: 4px; padding: 10px 12px; }
+  .demo-field-label { font-size: 9px; color: #8A8076; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+  .demo-field-value { font-size: 12px; color: #1B3228; font-weight: 500; }
+  .demo-materiality { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+  .demo-mat-btn { border: 1px solid #E2DDD5; border-radius: 4px; padding: 10px; text-align: center; font-size: 11px; cursor: pointer; }
+  .demo-mat-btn.selected { background: #D4EDD9; border-color: #4CAF65; color: #1B5E27; font-weight: 500; }
+
+  /* Features */
+  .demo-features { padding: 80px 64px; background: var(--cream); }
+  .demo-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border-radius: 4px; overflow: hidden; margin-top: 48px; }
+  .demo-feature { background: var(--cream); padding: 36px 32px; }
+  .demo-feature-icon { font-size: 20px; margin-bottom: 16px; }
+  .demo-feature-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--forest); margin-bottom: 10px; }
+  .demo-feature-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+  /* CTA finale démo */
+  .demo-cta-section { background: var(--forest-mid); padding: 80px 64px; text-align: center; }
+  .demo-cta-section h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 44px); font-weight: 300; color: var(--cream); margin-bottom: 14px; }
+  .demo-cta-section p { font-size: 14px; color: rgba(245,240,230,0.6); margin-bottom: 36px; }
+  .demo-cta-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 720px; margin: 0 auto; }
+  .demo-cta-card { background: rgba(245,240,230,0.06); border: 1px solid rgba(245,240,230,0.12); border-radius: 4px; padding: 32px 28px; text-align: left; }
+  .demo-cta-card-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ochre); margin-bottom: 12px; }
+  .demo-cta-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--cream); margin-bottom: 10px; }
+  .demo-cta-card p { font-size: 12px; color: rgba(245,240,230,0.5); line-height: 1.7; margin-bottom: 20px; }
+
+  @media (max-width: 900px) {
+    .demo-hero, .demo-mockup-wrap, .demo-features, .demo-cta-section { padding-left: 24px; padding-right: 24px; }
+    .demo-features-grid { grid-template-columns: 1fr; }
+    .demo-cta-cards { grid-template-columns: 1fr; }
+    .demo-screen { flex-direction: column; }
+    .demo-sidebar { width: 100%; padding: 12px 0; display: flex; flex-wrap: wrap; gap: 0; }
+    .demo-sidebar-logo { display: none; }
+    .demo-fields { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .demo-hero h1 { font-size: 32px; }
+    .demo-fields { grid-template-columns: 1fr; }
+    .demo-materiality { grid-template-columns: 1fr; }
+  }
+
+  /* ── HAMBURGER MENU MOBILE ── */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+  .nav-hamburger span { width: 22px; height: 2px; background: var(--forest); border-radius: 2px; transition: all .3s; display: block; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: rgba(245,240,230,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 99; flex-direction: column; padding: 16px 24px 24px; gap: 4px; }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a { font-size: 15px; font-weight: 400; color: var(--text-muted); padding: 12px 0; border-bottom: 1px solid var(--border); cursor: pointer; letter-spacing: .03em; display: block; }
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+  .nav-mobile-menu a.active, .nav-mobile-menu a:hover { color: var(--forest); }
+  .nav-mobile-cta { margin-top: 12px; font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--cream); background: var(--ochre); border: none; padding: 14px 24px; border-radius: 2px; cursor: pointer; text-align: center; width: 100%; }
+
+  /* ── RESPONSIVE COMPLET ── */
+  @media (max-width: 1100px) {
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 12px; }
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .brand-mark { width: 28px; height: 28px; font-size: 19px; }
+    .nav-links, .nav-cta, .nav-connexion, .nav-demo-btn { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero, .home-about, .services-hero, .contact-layout, .demo-layout, .team-intro-grid, .radf-section, .story-grid { grid-template-columns: 1fr; }
+    .hero-product-shot { width: min(100%, 720px); }
+    .demo-browser { width: 100%; }
+    .climate-browser { width: 100%; }
+    .hero-left, .hero-right, .about-left, .about-right, .services-hero, .radf-left, .radf-right, .contact-left, .contact-right, .demo-left, .demo-right, .histoire-hero, .histoire-def { padding: 48px 24px; }
+    .story-grid { padding: 48px 24px; gap: 32px; }
+    .strip { padding: 32px 24px; gap: 24px; flex-wrap: wrap; }
+    .modules-grid, .pricing-section, .ecosystem-section, .team-hero, .testimonials-section, .faq-section, .blog-grid-section, .pertes-section { padding-left: 20px; padding-right: 20px; }
+    .modules-grid { padding: 0 20px; }
+    .testimonials-grid, .eco-grid, .pertes-grid, .blog-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr 1fr; }
+    .module-row { grid-template-columns: 48px 1fr; } .module-detail { display: none; }
+    .radf-section { margin: 0 20px; }
+    footer { flex-direction: column; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .team-lead-card { padding: 40px 24px; }
+    .faq-section { padding: 56px 20px; }
+    .blog-grid-section { padding: 32px 20px; }
+    .blog-hero { padding: 48px 20px 32px; }
+    .pertes-section { padding: 48px 20px; }
+    .pertes-grid { grid-template-columns: 1fr 1fr; }
+    .article-modal-header, .article-modal-body { padding: 32px 24px; }
+    .pricing-section { padding: 56px 20px; }
+    .hero-ctas { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .hero-ctas .btn-primary, .hero-ctas .btn-ghost { width: 100%; text-align: center; box-sizing: border-box; }
+  }
+  @media (max-width: 600px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pertes-grid { grid-template-columns: 1fr; }
+    .team-intro-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 40px; }
+    .section-title { font-size: 30px; }
+    .page-title { font-size: 40px; }
+    .contact-title, .demo-title { font-size: 36px; }
+    .form-row { grid-template-columns: 1fr; }
+    .strip-num { font-size: 30px; }
+    .radf-section-title { font-size: 28px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .eco-grid { grid-template-columns: 1fr; }
+    nav { height: 60px; }
+    .page { padding-top: 60px; }
+    .nav-mobile-menu { top: 60px; }
+    #chat-widget { bottom: 16px; right: 16px; }
+    #chat-box { width: calc(100vw - 32px); right: 0; }
+    .story-stats { padding: 40px 24px; }
+    .radf-section { margin: 0 16px; }
+    .modules-grid { padding: 0 16px; }
+    .team-hero { padding: 48px 16px 40px; }
+  }
+  @media (max-width: 380px) {
+    .hero-title { font-size: 34px; }
+    .founder-name { font-size: 28px; }
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .page.active .hero-eyebrow { animation: fadeUp .5s ease both; }
+  .page.active .hero-title { animation: fadeUp .6s ease .1s both; }
+  .page.active .hero-tagline { animation: fadeUp .6s ease .2s both; }
+  .page.active .hero-ctas { animation: fadeUp .6s ease .3s both; }
+  .page.active .radf-card { animation: fadeUp .6s ease .15s both; }
+  .page.active .page-title { animation: fadeUp .5s ease both; }
+  .page.active .page-intro { animation: fadeUp .5s ease .1s both; }
+
+  /* WHATSAPP & CALENDLY */
+  .cd-link-whatsapp { color: #4AC959 !important; font-weight: 500; }
+  .cd-link-whatsapp:hover { color: #3aaa47 !important; }
+  .btn-calendly { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--cream); background: var(--ochre); border-radius: 2px; padding: 13px 20px; text-decoration: none; transition: background .2s; }
+  .btn-calendly:hover { background: var(--ochre-light); }
+  /* Bouton WhatsApp flottant */
+  #whatsapp-float { position: fixed; bottom: 96px; right: 28px; z-index: 998; width: 48px; height: 48px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 16px rgba(37,211,102,0.4); text-decoration: none; transition: transform .2s, box-shadow .2s; }
+  #whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 5px 20px rgba(37,211,102,0.5); }
+  #whatsapp-float svg { width: 24px; height: 24px; fill: white; }
+  @media (max-width: 600px) { #whatsapp-float { bottom: 80px; right: 16px; width: 44px; height: 44px; } }
+
+  /* Chat widget */
+  #chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 999; font-family: var(--font-body); }
+  #chat-toggle { width: 56px; height: 56px; border-radius: 50%; background: var(--forest); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 4px 20px rgba(27,50,40,0.3); transition: background .2s, transform .2s; margin-left: auto; }
+  #chat-toggle:hover { background: var(--forest-mid); transform: scale(1.05); }
+  #chat-box { display: none; position: absolute; bottom: 70px; right: 0; width: 340px; background: var(--cream); border-radius: 8px; box-shadow: 0 8px 40px rgba(27,50,40,0.18); overflow: hidden; flex-direction: column; }
+  #chat-box.open { display: flex; }
+  #chat-header { background: var(--forest); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+  #chat-header-info { display: flex; align-items: center; gap: 12px; }
+  #chat-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--ochre); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 16px; font-weight: 500; color: var(--cream); flex-shrink: 0; }
+  #chat-name { font-size: 14px; font-weight: 500; color: var(--cream); }
+  #chat-status { font-size: 11px; color: rgba(245,240,230,0.55); margin-top: 2px; }
+  #chat-messages { padding: 16px; display: flex; flex-direction: column; gap: 10px; max-height: 280px; overflow-y: auto; }
+  .chat-msg { max-width: 85%; padding: 10px 14px; border-radius: 6px; font-size: 13px; line-height: 1.6; }
+  .chat-msg.bot { background: var(--cream-dark); color: var(--text); border-bottom-left-radius: 2px; align-self: flex-start; }
+  .chat-msg.user { background: var(--forest); color: var(--cream); border-bottom-right-radius: 2px; align-self: flex-end; }
+  #chat-suggestions { padding: 0 16px 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .chat-chip { font-family: var(--font-body); font-size: 11px; font-weight: 500; color: var(--forest); background: var(--cream-dark); border: 1px solid var(--border); border-radius: 20px; padding: 5px 12px; cursor: pointer; transition: background .2s; white-space: nowrap; }
+  .chat-chip:hover { background: var(--sand); }
+  #chat-input-row { display: flex; border-top: 1px solid var(--border); }
+  #chat-input { flex: 1; font-family: var(--font-body); font-size: 13px; padding: 14px 16px; border: none; background: var(--cream); color: var(--text); outline: none; }
+  #chat-input::placeholder { color: var(--text-muted); }
+  #chat-send { background: var(--ochre); border: none; color: var(--cream); font-size: 18px; padding: 0 18px; cursor: pointer; transition: background .2s; }
+  #chat-send:hover { background: var(--ochre-light); }
+  @media (max-width: 900px) { #chat-box { width: calc(100vw - 48px); right: 0; } }
+
+  /* ── PLATFORM PREVIEW (near hero) ── */
+  .platform-preview { background: var(--cream-dark); padding: 64px 64px 0; border-top: 1px solid var(--border); }
+  .platform-preview-header { text-align: center; margin-bottom: 40px; }
+  .platform-preview-header h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 40px); font-weight: 300; color: var(--forest); margin-bottom: 10px; }
+  .platform-preview-header p { font-size: 14px; color: var(--text-muted); }
+.platform-proof-pills { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.platform-proof-pill { font-size: 11px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--forest); background: rgba(27,50,40,0.06); border: 1px solid rgba(27,50,40,0.12); border-radius: 999px; padding: 7px 13px; }
+.climate-browser { background: #fff; border-radius: 10px 10px 0 0; box-shadow: 0 28px 80px rgba(27,50,40,0.16); overflow: hidden; width: min(1280px, calc(100vw - 96px)); margin: 0 auto; border: 1px solid rgba(27,50,40,0.10); }
+.climate-bar { background: #EFEBE4; padding: 11px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #DDD8CF; }
+.climate-dot { width: 10px; height: 10px; border-radius: 50%; }
+.climate-url { flex: 1; background: #fff; border-radius: 4px; padding: 5px 12px; font-size: 10px; color: #8A8076; font-family: monospace; margin: 0 10px; }
+.climate-product-image { display: block; width: 100%; height: auto; }
+.demo-capture-head { text-align: center; max-width: 700px; margin: 0 auto 28px; }
+.demo-capture-head h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 42px); font-weight: 300; line-height: 1.15; color: var(--forest); margin-bottom: 10px; }
+.demo-capture-head p { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.8; }
+.demo-mockup-wrap.secondary { padding-top: 88px; background: var(--cream); border-top: 1px solid var(--border); }
+  .pp-browser { background: #fff; border-radius: 10px 10px 0 0; box-shadow: 0 -4px 0 2px rgba(27,50,40,0.04), 0 8px 48px rgba(27,50,40,0.12); overflow: hidden; max-width: 1000px; margin: 0 auto; }
+  .pp-bar { background: #EFEBE4; padding: 10px 14px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid #DDD8CF; }
+  .pp-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .pp-url { flex: 1; background: #fff; border-radius: 3px; padding: 4px 10px; font-size: 10px; color: #8A8076; font-family: monospace; margin: 0 10px; }
+  .pp-body { display: flex; min-height: 380px; }
+
+  /* Sidebar AKILI style (light) */
+  .pp-sidebar { width: 200px; background: #F8F6F2; border-right: 1px solid #E8E3DB; flex-shrink: 0; padding: 16px 0; }
+  .pp-sidebar-head { padding: 0 14px 16px; border-bottom: 1px solid #E8E3DB; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+  .pp-avatar { width: 32px; height: 32px; border-radius: 6px; background: var(--forest); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 14px; color: var(--cream); font-weight: 600; flex-shrink: 0; }
+  .pp-brand { }
+  .pp-brand strong { font-size: 12px; font-weight: 600; color: var(--forest); display: block; }
+  .pp-brand small { font-size: 9px; color: #8A8076; }
+  .pp-create-btn { margin: 10px 14px; background: var(--forest); color: var(--cream); border: none; border-radius: 4px; padding: 8px 14px; font-size: 11px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; width: calc(100% - 28px); }
+  .pp-nav-section { padding: 14px 14px 4px; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #A09585; font-weight: 600; }
+  .pp-nav-item { padding: 7px 14px; font-size: 11px; color: #6B7280; display: flex; align-items: center; gap: 8px; cursor: pointer; border-left: 2px solid transparent; }
+  .pp-nav-item:hover { background: #F0EDE8; }
+  .pp-nav-item.active { background: #EEF6EE; color: #1B5E27; border-left-color: #2ECC71; font-weight: 500; }
+  .pp-nav-dot { width: 6px; height: 6px; border-radius: 50%; background: #2ECC71; margin-left: auto; }
+
+  /* Main content - Reportings */
+  .pp-main { flex: 1; padding: 20px 24px; background: #fff; overflow: hidden; }
+  .pp-main-title { font-size: 16px; font-weight: 700; color: var(--forest); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .pp-report-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .pp-report-card { border: 1px solid #EDE8E0; border-radius: 8px; padding: 14px; }
+  .pp-rc-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .pp-rc-name { font-size: 12px; font-weight: 700; color: var(--forest); }
+  .pp-rc-badge { font-size: 8px; font-weight: 600; padding: 2px 7px; border-radius: 2px; background: #E8F0E8; color: #1B5E27; }
+  .pp-rc-meta { font-size: 9px; color: #8A8076; margin-bottom: 10px; line-height: 1.5; }
+  .pp-rc-pct { font-size: 22px; font-weight: 700; color: var(--forest); margin-bottom: 5px; }
+  .pp-rc-bar { height: 5px; background: #EDE8E0; border-radius: 3px; overflow: hidden; margin-bottom: 10px; }
+  .pp-rc-fill { height: 100%; border-radius: 3px; }
+  .pp-rc-btn { width: 100%; border: 1px solid #EDE8E0; border-radius: 4px; background: none; padding: 6px; font-size: 9px; color: #8A8076; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; }
+
+  /* ── ESRS RÉFÉRENTIEL MOCKUP (replaces dashboard section) ── */
+  .esrs-section { background: var(--cream); padding: 80px 64px; border-top: 1px solid var(--border); }
+  .esrs-section-header { text-align: center; margin-bottom: 48px; }
+  .esrs-section-header h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 44px); font-weight: 300; color: var(--forest); margin-bottom: 10px; }
+  .esrs-section-header p { font-size: 14px; color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+  .esrs-browser { background: #fff; border-radius: 8px; box-shadow: 0 8px 48px rgba(27,50,40,0.1); overflow: hidden; max-width: 960px; margin: 0 auto; border: 1px solid #E8E3DB; }
+  .esrs-bar { background: #EFEBE4; padding: 10px 14px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid #DDD8CF; }
+  .esrs-bar-url { flex: 1; background: #fff; border-radius: 3px; padding: 4px 10px; font-size: 10px; color: #8A8076; font-family: monospace; margin: 0 10px; }
+  .esrs-body { display: flex; min-height: 420px; }
+  .esrs-sidebar { width: 190px; background: #F8F6F2; border-right: 1px solid #E8E3DB; flex-shrink: 0; padding: 14px 0; }
+  .esrs-sidebar-head { padding: 0 14px 14px; border-bottom: 1px solid #E8E3DB; margin-bottom: 6px; display: flex; align-items: center; gap: 9px; }
+  .esrs-avatar { width: 30px; height: 30px; border-radius: 6px; background: var(--forest); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 13px; color: var(--cream); font-weight: 600; flex-shrink: 0; }
+  .esrs-brand strong { font-size: 11px; font-weight: 600; color: var(--forest); display: block; }
+  .esrs-brand small { font-size: 8px; color: #8A8076; }
+  .esrs-create { margin: 8px 14px; background: #1B5E27; color: #fff; border: none; border-radius: 4px; padding: 7px 12px; font-size: 10px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 5px; width: calc(100% - 28px); }
+  .esrs-nav-sec { padding: 12px 14px 3px; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #A09585; font-weight: 600; }
+  .esrs-nav-item { padding: 6px 14px; font-size: 11px; color: #6B7280; display: flex; align-items: center; gap: 8px; cursor: pointer; border-left: 2px solid transparent; }
+  .esrs-nav-item.active { background: #EEF6EE; color: #1B5E27; border-left-color: #2ECC71; font-weight: 500; }
+  .esrs-content { flex: 1; padding: 18px 24px; background: #FAFAF8; overflow: hidden; }
+  .esrs-breadcrumb { font-size: 10px; color: #8A8076; margin-bottom: 12px; }
+  .esrs-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
+  .esrs-tag { font-size: 9px; font-weight: 500; padding: 3px 8px; border-radius: 3px; }
+  .esrs-tag-green { background: #D4EDD9; color: #1B5E27; }
+  .esrs-tag-dark { background: #2D2D2D; color: #fff; }
+  .esrs-tag-blue { background: #6B48D0; color: #fff; }
+  .esrs-tag-grey { background: #E8E4DC; color: #5A5040; }
+  .esrs-id { display: inline-flex; align-items: center; gap: 6px; background: #1B1B1B; color: #E0D9FF; font-size: 10px; padding: 3px 8px; border-radius: 3px; font-family: monospace; margin-bottom: 10px; }
+  .esrs-indicator-title { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 3px; line-height: 1.3; }
+  .esrs-indicator-sub { font-size: 10px; color: #8A8076; font-style: italic; margin-bottom: 6px; }
+  .esrs-indicator-desc { font-size: 11px; color: #5A6E63; margin-bottom: 10px; line-height: 1.5; }
+  .esrs-status-pills { display: flex; gap: 5px; margin-bottom: 12px; }
+  .esrs-pill { font-size: 9px; padding: 3px 8px; border-radius: 20px; border: 1px solid #E0DAD0; color: #5A6E63; display: flex; align-items: center; gap: 3px; }
+  .esrs-tabs { display: flex; gap: 0; border-bottom: 2px solid #E8E3DB; margin-bottom: 14px; }
+  .esrs-tab { font-size: 10px; padding: 7px 14px; color: #8A8076; border-bottom: 2px solid transparent; cursor: pointer; margin-bottom: -2px; }
+  .esrs-tab.active { color: #1B5E27; border-bottom-color: #1B5E27; font-weight: 600; }
+  .esrs-instructions-label { font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: #A09585; margin-bottom: 8px; font-weight: 600; }
+  .esrs-accordion { border: 1px solid #E8E3DB; border-radius: 4px; padding: 9px 12px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; }
+  .esrs-accordion-official { background: #EEF3FC; color: #1B3A6E; border-color: #C5D5ED; }
+  .esrs-accordion-akili { background: #EEF6EE; color: #1B5E27; border-color: #B5D9B5; }
+  .esrs-fields { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+  .esrs-field { background: #fff; border: 1px solid #E8E3DB; border-radius: 4px; padding: 9px 12px; }
+  .esrs-field-label { font-size: 8px; color: #A09585; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; }
+  .esrs-field-value { font-size: 11px; color: var(--forest); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .platform-preview, .esrs-section { padding-left: 24px; padding-right: 24px; }
+    .pp-body, .esrs-body { flex-direction: column; }
+    .pp-sidebar, .esrs-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #E8E3DB; display: flex; flex-wrap: wrap; padding: 8px; }
+    .pp-sidebar-head, .esrs-sidebar-head { display: none; }
+    .pp-create-btn, .esrs-create { display: none; }
+    .pp-report-grid { grid-template-columns: 1fr 1fr; }
+    .esrs-fields { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .pp-report-grid { grid-template-columns: 1fr; }
+    .esrs-fields { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── CONNEXION NAV LINK ── */
+  .nav-connexion { font-size: 12px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; color: var(--forest); background: transparent; border: 1px solid var(--forest); padding: 8px 16px; border-radius: 2px; cursor: pointer; text-decoration: none; transition: all .2s; display: inline-flex; align-items: center; gap: 6px; }
+  .nav-connexion::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #2ECC71; display: inline-block; }
+  .nav-connexion:hover { background: var(--forest); color: var(--cream); }
+
+  /* ── PLATFORM FEATURES SECTION ── */
+  .platform-section { background: var(--cream-dark); padding: 80px 64px; border-top: 1px solid var(--border); }
+  .platform-header { text-align: center; margin-bottom: 48px; }
+  .platform-header h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 38px); font-weight: 400; color: var(--forest); margin-bottom: 10px; line-height: 1.2; }
+  .platform-header p { font-size: 14px; color: var(--text-muted); max-width: 480px; margin: 0 auto; }
+  .platform-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .platform-card { background: var(--cream); padding: 32px 24px; cursor: pointer; transition: background .2s; text-decoration: none; display: block; }
+  .platform-card:hover { background: var(--forest); }
+  .platform-card:hover .pc-icon { background: rgba(200,133,58,0.2); color: var(--ochre); }
+  .platform-card:hover .pc-title { color: var(--cream); }
+  .platform-card:hover .pc-desc { color: rgba(245,240,230,0.6); }
+  .platform-card:hover .pc-arrow { color: var(--ochre); }
+  .pc-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 20px; transition: background .2s; }
+  .pc-title { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--forest); margin-bottom: 8px; transition: color .2s; }
+  .pc-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; transition: color .2s; }
+  .pc-arrow { font-size: 12px; color: var(--ochre); font-weight: 500; transition: color .2s; }
+
+  /* ── DASHBOARD PREVIEW SECTION ── */
+  .dashboard-section { background: var(--forest); padding: 80px 64px; }
+  .dashboard-header { text-align: center; margin-bottom: 48px; }
+  .dashboard-header h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 44px); font-weight: 300; color: var(--cream); margin-bottom: 10px; }
+  .dashboard-header p { font-size: 14px; color: rgba(245,240,230,0.55); max-width: 480px; margin: 0 auto; }
+  .db-mockup { background: var(--cream-dark); border-radius: 8px; overflow: hidden; box-shadow: 0 16px 64px rgba(0,0,0,0.3); max-width: 960px; margin: 0 auto; }
+  .db-topbar { background: #F0EDE8; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #E2DDD5; }
+  .db-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .db-url { flex: 1; background: #fff; border-radius: 3px; padding: 4px 10px; font-size: 10px; color: #8A8076; font-family: monospace; margin: 0 12px; }
+  .db-body { display: flex; min-height: 340px; }
+  .db-sidebar { width: 170px; background: var(--forest); padding: 16px 0; flex-shrink: 0; }
+  .db-sidebar-brand { padding: 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 8px; }
+  .db-sidebar-brand strong { font-family: var(--font-display); font-size: 14px; color: var(--cream); display: block; }
+  .db-sidebar-brand small { font-size: 8px; color: rgba(245,240,230,0.3); letter-spacing:.06em; text-transform:uppercase; }
+  .db-nav-item { padding: 8px 14px; font-size: 11px; color: rgba(245,240,230,0.45); display: flex; align-items: center; gap: 7px; cursor: pointer; }
+  .db-nav-item.active { background: rgba(200,133,58,0.15); color: var(--ochre-light); border-left: 2px solid var(--ochre); }
+  .db-nav-section { padding: 12px 14px 4px; font-size: 8px; letter-spacing:.1em; text-transform:uppercase; color: rgba(245,240,230,0.2); }
+  .db-main { flex: 1; padding: 20px 24px; background: #F7F5F1; }
+  .db-main-title { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--forest); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .db-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .db-card { background: #fff; border-radius: 6px; padding: 14px 16px; border: 1px solid #E8E4DC; }
+  .db-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .db-card-name { font-size: 12px; font-weight: 600; color: var(--forest); }
+  .db-card-badge { font-size: 9px; font-weight: 500; padding: 2px 6px; border-radius: 2px; background: #E8F0E8; color: #2D5A2D; }
+  .db-card-meta { font-size: 9px; color: #8A8076; margin-bottom: 10px; line-height: 1.5; }
+  .db-card-pct { font-size: 20px; font-weight: 600; color: var(--forest); margin-bottom: 6px; }
+  .db-progress { height: 5px; background: #E8E4DC; border-radius: 3px; overflow: hidden; margin-bottom: 10px; }
+  .db-progress-fill { height: 100%; border-radius: 3px; background: var(--ochre); }
+  .db-export-btn { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text-muted); border: 1px solid #E2DDD5; border-radius: 3px; padding: 5px 10px; background: none; cursor: pointer; width: 100%; justify-content: center; }
+
+  /* Donut chart CSS */
+  .db-donut { width: 64px; height: 64px; border-radius: 50%; background: conic-gradient(var(--ochre) 0% 45%, #2D4A3E 45% 75%, #3D5E50 75% 90%, #C8D5C0 90% 100%); position: relative; margin: 0 auto 8px; }
+  .db-donut::after { content: ''; position: absolute; inset: 14px; background: #F7F5F1; border-radius: 50%; }
+  .db-legend { display: flex; flex-direction: column; gap: 3px; }
+  .db-legend-item { display: flex; align-items: center; gap: 5px; font-size: 9px; color: #5A6E63; }
+  .db-legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+  @media (max-width: 900px) {
+    .platform-section, .dashboard-section { padding: 48px 24px; }
+    .platform-cards { grid-template-columns: 1fr 1fr; }
+    .db-cards-grid { grid-template-columns: 1fr 1fr; }
+    .db-body { flex-direction: column; }
+    .db-sidebar { width: 100%; display: flex; flex-wrap: wrap; padding: 8px; }
+    .db-sidebar-brand { display: none; }
+    .db-nav-item { font-size: 10px; padding: 6px 10px; }
+  }
+  @media (max-width: 600px) {
+    .platform-cards { grid-template-columns: 1fr; }
+    .db-cards-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-top"><span class="brand-mark">A</span><span>AKILI ESG</span></div>
+    <span class="nav-slogan">L'intelligence au service de la durabilité</span>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Accueil</a></li>
+    <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+    <li><a onclick="showPage('histoire')" id="nav-histoire">Notre histoire</a></li>
+    <li><a onclick="showPage('equipe')" id="nav-equipe">L'équipe</a></li>
+    <li><a onclick="showPage('blog')" id="nav-blog">Blog</a></li>
+    <li><a onclick="showPage('simulateur')" id="nav-simulateur">Simulateur</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a href="#" onclick="openSaas('/login');return false;" class="nav-connexion">Connexion</a>
+    <button class="nav-demo-btn" onclick="showPage('demo')" id="nav-demo">Voir la démo</button>
+    <a href="https://calendly.com/karamokobehdiaby/30min" target="_blank" rel="noopener" class="nav-cta" style="text-decoration:none">Prendre un RDV</a>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MENU MOBILE -->
+<div class="nav-mobile-menu" id="mobile-menu">
+  <a onclick="showPage('home');closeMobileMenu()" id="mnav-home" class="active">Accueil</a>
+  <a onclick="showPage('services');closeMobileMenu()" id="mnav-services">Services</a>
+  <a onclick="showPage('histoire');closeMobileMenu()" id="mnav-histoire">Notre histoire</a>
+  <a onclick="showPage('equipe');closeMobileMenu()" id="mnav-equipe">L'équipe</a>
+  <a onclick="showPage('blog');closeMobileMenu()" id="mnav-blog">Blog</a>
+  <a onclick="showPage('simulateur');closeMobileMenu()" id="mnav-simulateur">Simulateur</a>
+  <a onclick="showPage('contact');closeMobileMenu()" id="mnav-contact">Contact</a>
+  <button class="nav-mobile-cta" onclick="showPage('demo');closeMobileMenu()">Demander une démo →</button>
+</div>
+
+
+
+
+
+
+<!-- ================= PAGE ACCUEIL (recopiée intégralement du code fonctionnel) ================= -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-left">
+      <div>
+        <p class="hero-eyebrow">Conseil en reporting de durabilité · Abidjan</p>
+        <h1 class="hero-title">Votre démarche ESG,<br><em>mesurée et racontée.</em></h1>
+        <p class="hero-tagline">En Afrique de l'Ouest, la durabilité devient un critère de sélection — pour vos financeurs, vos clients, vos partenaires. Nous transformons votre démarche ESG en un récit structuré, mesurable et défendable.</p>
+        <div class="hero-ctas">
+          <button class="btn-primary" onclick="showPage('simulateur')">Évaluer mon risque ESG</button>
+          <button class="btn-ghost" onclick="document.getElementById('pertes').scrollIntoView({behavior:'smooth'})">Ce que vous perdez sans ESG →</button>
+        </div>
+      </div>
+      <p class="hero-stat">Abidjan · Côte d'Ivoire · Zone OHADA</p>
+    </div>
+    <div class="hero-right">
+      <figure class="hero-product-shot">
+        <img src="assets/akili-platform-indicator.png" alt="Interface AKILI ESG affichant un indicateur CSRD et ses guidances">
+        <figcaption class="hero-product-caption">Aperçu de la plateforme AKILI ESG</figcaption>
+      </figure>
+      <div class="radf-card">
+        <p class="radf-label">Notre indice propriétaire</p>
+        <h2 class="radf-title">Indice RADF<br>Cohérence discours‑pratiques</h2>
+        <p class="radf-body">Un indicateur exclusif, issu de la recherche, qui mesure l'alignement entre vos engagements déclarés, vos données chiffrées et vos actions vérifiables.</p>
+        <div class="radf-score-row">
+          <div class="score-cell"><div class="score-val">E</div><div class="score-label">Environnement</div></div>
+          <div class="score-cell"><div class="score-val">S</div><div class="score-label">Social</div></div>
+          <div class="score-cell"><div class="score-val high">G</div><div class="score-label">Gouvernance</div></div>
+        </div>
+      </div>
+      <div class="home-references">
+        <p class="ref-label">Référentiels maîtrisés</p>
+        <div class="ref-logos">
+          <span class="ref-pill">CSRD</span>
+          <span class="ref-pill">Note 35 OHADA</span><span class="ref-pill">VSME</span>
+          <span class="ref-pill">Double matérialité</span><span class="ref-pill">GRI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- PLATFORM PREVIEW — Module Climat juste sous le hero -->
+<div class="platform-preview">
+  <div class="platform-preview-header">
+    <p class="section-eyebrow">AKILI ESG — Module Climat</p>
+    <h2>Pilotez vos indicateurs climat,<br>du bilan à la preuve.</h2>
+    <p>Suivez vos émissions, comparez vos trajectoires et transformez vos données carbone en décisions lisibles pour vos équipes, vos financeurs et vos auditeurs.</p>
+    <div class="platform-proof-pills">
+      <span class="platform-proof-pill">Bilan GES</span>
+      <span class="platform-proof-pill">Trajectoire 2030</span>
+      <span class="platform-proof-pill">CSRD · E1</span>
+    </div>
+  </div>
+  <div class="climate-browser">
+    <div class="climate-bar">
+      <div class="climate-dot" style="background:#FF5F57"></div>
+      <div class="climate-dot" style="background:#FEBC2E"></div>
+      <div class="climate-dot" style="background:#28C840"></div>
+      <div class="climate-url">localhost:3000 / module-climat / bilans</div>
+    </div>
+    <img class="climate-product-image" src="assets/akili-module-climat.png" alt="Dashboard AKILI ESG du module climat montrant l'évolution des émissions de GES">
+  </div>
+</div>
+
+  <div class="strip">
+    <div class="strip-item"><span class="strip-num">6</span><span class="strip-desc">modules de service</span></div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-num">8</span><span class="strip-desc">semaines de production</span></div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-num">1</span><span class="strip-desc">indice propriétaire RADF</span></div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-num">EcoVadis</span><span class="strip-desc">préparation à l'évaluation</span></div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-num">OHADA</span><span class="strip-desc">ancrage réglementaire local</span></div>
+  </div>
+  <!-- SECTION PLATEFORME : 4 BOUTONS FEATURES -->
+  <div class="platform-section">
+    <div class="platform-header">
+      <p class="section-eyebrow">AKILI ESG — Plateforme</p>
+      <h2>Évaluez votre organisation<br>avec notre outil de diagnostic RSE</h2>
+      <p>La plateforme AKILI ESG couvre l'ensemble du cycle de reporting — du diagnostic initial à la publication du rapport final.</p>
+    </div>
+    <div class="platform-cards">
+      <a class="platform-card" onclick="showPage('simulateur')">
+        <div class="pc-icon">🎯</div>
+        <div class="pc-title">Évaluer sa maturité</div>
+        <div class="pc-desc">Mesurez votre niveau de préparation ESG en 5 minutes avec notre outil de diagnostic interactif.</div>
+        <div class="pc-arrow">Lancer le diagnostic →</div>
+      </a>
+      <a class="platform-card" onclick="showPage('services')">
+        <div class="pc-icon">🗺️</div>
+        <div class="pc-title">Construire sa stratégie</div>
+        <div class="pc-desc">Identifiez vos sujets matériels, hiérarchisez vos priorités ESG et construisez un plan d'action structuré.</div>
+        <div class="pc-arrow">Voir les modules →</div>
+      </a>
+      <a class="platform-card" onclick="openSaas('/dashboard')">
+        <div class="pc-icon">📊</div>
+        <div class="pc-title">Piloter ses indicateurs</div>
+        <div class="pc-desc">Collectez, validez et suivez tous vos indicateurs ESRS en temps réel. Campagnes multi-contributeurs incluses.</div>
+        <div class="pc-arrow">Voir la plateforme →</div>
+      </a>
+      <a class="platform-card" onclick="openSaas('/reports')">
+        <div class="pc-icon">📄</div>
+        <div class="pc-title">Préparer son reporting</div>
+        <div class="pc-desc">Générez automatiquement votre rapport RSE — CSRD, Note 35 OHADA ou EcoVadis — en quelques semaines.</div>
+        <div class="pc-arrow">Découvrir AKILI ESG →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="pertes-section" id="pertes">
+    <div class="pertes-header">
+      <div>
+        <p class="section-eyebrow" style="color:var(--ochre)">Les enjeux</p>
+        <h2 class="section-title" style="color:var(--cream)">Ce que votre entreprise<br><em style="color:var(--ochre-light)">risque sans ESG structuré.</em></h2>
+      </div>
+      <p class="pertes-intro">Un rapport ESG mal construit, c'est un dossier de financement affaibli. Un appel d'offres perdu face à un concurrent mieux préparé. Une filiale européenne qui remet en question votre chaîne de valeur. La rigueur sur le fond et la clarté sur la forme ne sont pas des options — elles sont la condition de votre crédibilité.</p>
+    </div>
+    <div class="pertes-grid">
+      <div class="perte-card"><div class="perte-icon">🏦</div><p class="perte-title">Accès au financement vert</p><p class="perte-desc">Les DFI, fonds d'impact et banques commerciales actifs en zone UEMOA conditionnent de plus en plus leurs décisions à la qualité de votre reporting extra-financier.</p><span class="perte-tag">BRVM · DFI · Fonds impact</span></div>
+      <div class="perte-card"><div class="perte-icon">🤝</div><p class="perte-title">Contrats avec vos donneurs d'ordre européens</p><p class="perte-desc">Soumis à la CSRD, vos clients et partenaires européens collectent des données ESG auprès de toute leur chaîne de valeur — y compris leurs sous-traitants ivoiriens.</p><span class="perte-tag">CSRD · Chaîne de valeur</span></div>
+      <div class="perte-card"><div class="perte-icon">📊</div><p class="perte-title">Crédibilité auprès des investisseurs</p><p class="perte-desc">Un rapport sans preuves vérifiables ni indicateurs solides ne résiste pas à l'analyse d'un investisseur institutionnel. L'indice RADF mesure exactement cet écart.</p><span class="perte-tag">Investisseurs · RADF</span></div>
+      <div class="perte-card"><div class="perte-icon">⚖️</div><p class="perte-title">Conformité réglementaire OHADA</p><p class="perte-desc">La Note 35 OHADA impose des obligations de publication aux entreprises d'une certaine taille. Le non-respect expose à des risques juridiques et à une perte de confiance des parties prenantes.</p><span class="perte-tag">Note 35 · OHADA</span></div>
+    </div>
+    <div class="pertes-cta-row">
+      <button class="btn-primary" onclick="showPage('contact')">Parler de mon exposition →</button>
+      <button class="btn-ghost" onclick="showPage('services')" style="color:rgba(245,240,230,0.7);border-color:rgba(245,240,230,0.2)">Voir nos solutions</button>
+    </div>
+  </div>
+  <div class="home-about">
+    <div class="about-left">
+      <p class="section-eyebrow">Notre approche</p>
+      <h2 class="section-title">Le reporting,<br><em>comme outil de pilotage</em><br>et de preuve.</h2>
+      <p class="body-text">La rigueur réglementaire sans la lisibilité ne convainc personne. La communication sans les preuves ne résiste à aucun audit. AKILI ESG réunit les deux — pour les entreprises qui opèrent entre Abidjan et les marchés internationaux.</p>
+      <p class="body-text">Notre approche associe rigueur réglementaire, narration stratégique et mesure de la cohérence via l'indice RADF — pour évaluer précisément l'écart entre ce que votre entreprise déclare et ce qu'elle démontre réellement.</p>
+      <button class="btn-primary" onclick="showPage('services')" style="margin-top:16px">Voir nos services</button>
+    </div>
+    <div class="about-right">
+      <p class="section-eyebrow">Ce qui nous distingue</p>
+      <div class="differentiators">
+        <div class="diff-item"><span class="diff-num">01</span><div><p class="diff-title">L'indice RADF, exclusif</p><p class="diff-desc">Le seul cabinet en Afrique de l'Ouest à proposer une mesure propriétaire de la cohérence discours-pratiques, chapitre par chapitre.</p></div></div>
+        <div class="diff-item"><span class="diff-num">02</span><div><p class="diff-title">Ancrage OHADA + CSRD</p><p class="diff-desc">Nous maîtrisons les deux référentiels : la Note 35 OHADA pour les entreprises locales, la CSRD/ESRS pour les filiales de groupes européens.</p></div></div>
+        <div class="diff-item"><span class="diff-num">03</span><div><p class="diff-title">PME et ETI, pas les seuls grands groupes</p><p class="diff-desc">Nous avons conçu des offres adaptées aux ressources et contraintes des entreprises de moins de 500 salariés.</p></div></div>
+        <div class="diff-item"><span class="diff-num">04</span><div><p class="diff-title">Production complète, bout en bout</p><p class="diff-desc">Du diagnostic à la publication — rédaction, design éditorial, mise en page — sans sous-traiter la vision stratégique.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-logo"><span class="brand-mark">A</span><span>AKILI ESG</span><span class="nav-slogan" style="margin-left: 8px;">L'intelligence au service de la durabilité</span></div>
+    <ul class="footer-links"><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('histoire')">Notre histoire</a></li><li><a onclick="showPage('equipe')">Équipe</a></li><li><a onclick="showPage('contact')">Contact</a></li><li><a onclick="showPage('simulateur')">Simulateur</a></li></ul>
+    <p class="footer-legal">© 2025 AKILI ESG · Abidjan, Côte d'Ivoire</p>
+  </footer>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ================= PAGE SERVICES (identique au code fonctionnel) ================= -->
+<div id="page-services" class="page">
+  <div class="services-hero">
+    <div>
+      <p class="section-eyebrow">Nos services</p>
+      <h1 class="page-title">Une offre<br>modulaire,<br>à la carte.</h1>
+    </div>
+    <p class="page-intro">Cinq modules indépendants, activables selon votre avancement et vos ressources. De l'audit initial à la publication finale, en passant par notre diagnostic exclusif RADF. Chaque brique peut être commandée séparément ou intégrée dans une mission complète.</p>
+  </div>
+  <div class="modules-grid">
+    <div class="module-row"><div class="module-num-cell"><span class="module-num">01</span></div><div class="module-main"><span class="module-tag">Porte d'entrée</span><h3 class="module-name">Diagnostic ESG<br>et double matérialité</h3><p class="module-desc">Cartographie complète de vos enjeux ESG selon les ESRS et la Note 35 OHADA. Identification des sujets matériels. Scoring RADF initial.</p></div><div class="module-detail"><p class="module-detail-label">Livrables</p><p class="module-deliverable">Rapport de diagnostic 15 pages · Matrice de double matérialité · Fiche de score RADF initiale · Benchmark pairs sectoriels</p></div></div>
+    <div class="module-row"><div class="module-num-cell"><span class="module-num">02</span></div><div class="module-main"><span class="module-tag">Fond</span><h3 class="module-name">Architecture narrative<br>et collecte de données</h3><p class="module-desc">Structuration du plan éditorial, interviews internes, collecte et nettoyage des données brutes. Adaptation au référentiel retenu.</p></div><div class="module-detail"><p class="module-detail-label">Livrables</p><p class="module-deliverable">Chemin de fer détaillé · Plan de collecte · Compte-rendu d'interviews · Base de données KPI structurée</p></div></div>
+    <div class="module-row"><div class="module-num-cell"><span class="module-num">03</span></div><div class="module-main"><span class="module-tag diff">Différenciant RADF</span><h3 class="module-name">Rédaction et validation<br>par l'indice RADF</h3><p class="module-desc">Rédaction complète du rapport avec application de notre indice RADF à chaque section. Score par chapitre et score global. Recommandations avant publication.</p></div><div class="module-detail"><p class="module-detail-label">Livrables</p><p class="module-deliverable">Rapport rédigé intégralement · Fiche de score RADF annotée · Note de recommandations rédactionnelles</p></div></div>
+    <div class="module-row"><div class="module-num-cell"><span class="module-num">04</span></div><div class="module-main"><span class="module-tag">Forme</span><h3 class="module-name">Design éditorial<br>et publication</h3><p class="module-desc">Mise en page professionnelle adaptée à votre charte graphique. Infographies de données. Option bilingue FR/EN.</p></div><div class="module-detail"><p class="module-detail-label">Livrables</p><p class="module-deliverable">PDF HD impression · PDF web interactif · Infographies isolées · Version bilingue (option)</p></div></div>
+    <div class="module-row"><div class="module-num-cell"><span class="module-num">05</span></div><div class="module-main"><span class="module-tag">Récurrent</span><h3 class="module-name">Abonnement veille<br>réglementaire</h3><p class="module-desc">Suivi trimestriel des évolutions CSRD, ESRS, EcoVadis et Note 35 OHADA. Newsletter mensuelle et analyses sectorielles ciblées zone UEMOA.</p></div><div class="module-detail"><p class="module-detail-label">Livrables</p><p class="module-deliverable">Newsletter mensuelle · Note de veille trimestrielle · Analyses sectorielles · Alertes réglementaires</p></div></div>
+    <div class="module-row"><div class="module-num-cell"><span class="module-num">06</span></div><div class="module-main"><span class="module-tag">Renforcement</span><h3 class="module-name">Formation des équipes<br>aux enjeux ESG</h3><p class="module-desc">Programmes sur mesure pour vos équipes dirigeantes, RSE, finance et RH. Maîtrise des référentiels, collecte de données, pilotage de projet reporting et préparation aux évaluations EcoVadis.</p></div><div class="module-detail"><p class="module-detail-label">Livrables</p><p class="module-deliverable">Programme de formation personnalisé · Supports pédagogiques · Atelier pratique sur vos données · Certificat de participation</p></div></div>
+  </div>
+  <div class="radf-section">
+    <div class="radf-left">
+      <p class="radf-label">Indice propriétaire</p>
+      <h2 class="radf-section-title">L'indice RADF :<br>mesurer ce que votre rapport dit vraiment.</h2>
+      <p class="radf-section-body">Développé à partir d'une recherche doctorale en sciences de gestion, le RADF mesure la distance entre les engagements formulés et les preuves apportées — chapitre par chapitre. Ses résultats anticipent les points de vigilance que vos auditeurs et vos parties prenantes identifieront.</p>
+    </div>
+    <div class="radf-right">
+      <div class="radf-pillars">
+        <div class="radf-pillar"><div class="pillar-icon">R</div><div><p class="pillar-name">Rhétorique</p><p class="pillar-desc">Analyse du registre lexical — assertions fortes vs modulations et réserves.</p></div></div>
+        <div class="radf-pillar"><div class="pillar-icon">A</div><div><p class="pillar-name">Adéquation</p><p class="pillar-desc">Vérification de la cohérence entre les thèmes abordés et les enjeux matériels identifiés.</p></div></div>
+        <div class="radf-pillar"><div class="pillar-icon">D</div><div><p class="pillar-name">Données</p><p class="pillar-desc">Densité et fiabilité des indicateurs chiffrés par rapport aux affirmations qualitatives.</p></div></div>
+        <div class="radf-pillar"><div class="pillar-icon">F</div><div><p class="pillar-name">Faits</p><p class="pillar-desc">Présence de preuves concrètes, datées et vérifiables pour chaque engagement déclaré.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="pricing-section">
+    <p class="section-eyebrow">Tarification</p>
+    <h2 class="section-title">Des forfaits adaptés<br>à votre taille.</h2>
+    <div class="pricing-grid">
+      <div class="price-card"><p class="price-tier">PME</p><p class="price-name">Starter</p><p class="price-amount">8 – 15 M FCFA</p><div class="price-divider"></div><p class="price-includes">Modules 1 + 3 + 4<br>Diagnostic · Rédaction RADF · Mise en page<br><br>Idéal pour une première publication VSME ou Note 35 OHADA.</p></div>
+      <div class="price-card featured"><p class="price-tier">ETI recommandé</p><p class="price-name">Essential</p><p class="price-amount">20 – 40 M FCFA</p><div class="price-divider"></div><p class="price-includes">Modules 1 + 2 + 3 + 4<br>Diagnostic · Collecte · Rédaction RADF · Design<br><br>Pour une ETI publiée pour la première ou deuxième fois.</p></div>
+      <div class="price-card"><p class="price-tier">ETI filiale</p><p class="price-name">Premium</p><p class="price-amount">50 – 80 M FCFA</p><div class="price-divider"></div><p class="price-includes">Modules 1 à 6<br>Mission complète + formation équipes + veille<br><br>Pour les filiales de groupes soumis à la CSRD européenne.</p></div>
+      <div class="price-card"><p class="price-tier">Évaluation</p><p class="price-name">EcoVadis</p><p class="price-amount">5 – 12 M FCFA</p><div class="price-divider"></div><p class="price-includes">Diagnostic EcoVadis · Plan d'amélioration · Accompagnement au questionnaire · Formation équipes<br><br>Pour les entreprises sollicitées par leurs clients pour une notation EcoVadis.</p></div>
+      <div class="price-card"><p class="price-tier">Récurrent</p><p class="price-name">Veille</p><p class="price-amount">2 – 4 M FCFA / an</p><div class="price-divider"></div><p class="price-includes">Module 5 seul<br>Newsletter · Alertes réglementaires · Mises à jour OHADA & CSRD<br><br>Abonnement annuel activable indépendamment.</p></div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo"><span class="brand-mark">A</span><span>AKILI ESG</span></div>
+    <ul class="footer-links"><li><a onclick="showPage('home')">Accueil</a></li><li><a onclick="showPage('histoire')">Notre histoire</a></li><li><a onclick="showPage('equipe')">Équipe</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul>
+    <p class="footer-legal">© 2025 AKILI ESG · Abidjan, Côte d'Ivoire</p>
+  </footer>
+</div>
+
+
+
+
+
+
+
+<!-- ================= PAGE NOTRE HISTOIRE (NOUVEAU CONTENU) ================= -->
+<div id="page-histoire" class="page">
+  <div class="histoire-hero">
+    <p class="section-eyebrow">Notre histoire</p>
+    <h1 class="page-title" style="color:var(--cream)">L'intelligence<br><em style="color:var(--ochre-light)">au service de la durabilité.</em></h1>
+  </div>
+  <div class="histoire-def">
+    <div class="def-box">
+      <strong>AKILI ESG</strong> : première plateforme SaaS de reporting de durabilité conçue pour l'Afrique de l'Ouest, basée à Abidjan.<br>
+      Nous accompagnons les entreprises d’Afrique de l’Ouest à transformer leurs engagements ESG en un récit structuré, mesurable et vérifiable.<br>
+      <span style="font-size: 18px; color: var(--ochre);">« Pas de communication sans preuve, pas de preuve sans récit. »</span>
+    </div>
+  </div>
+  <div class="story-grid">
+    <div class="story-text">
+      <p><strong>Pourquoi AKILI ESG est né ?</strong></p>
+      <p>En 2022, alors qu’il terminait sa recherche doctorale à l’Université Paris 8, Karamoko Diaby a analysé <strong>2 926 rapports de durabilité</strong> des six plus grandes banques françaises sur dix ans. L’objectif : mesurer l’écart entre les engagements déclarés et les preuves effectivement fournies.</p>
+      <p>Le résultat a été sans appel : derrière des discours parfois très engagés, les preuves manquaient. Des indicateurs absents, des données floues, des actions non datées. Il a formalisé cet écart dans un indice, aujourd’hui appelé <strong>RADF</strong>.</p>
+      <p>Mais à quoi sert un outil de mesure sans accompagnement sur le terrain ? À la même époque, des dirigeants ivoiriens contactaient ce chercheur : leurs clients européens exigeaient des rapports ESG, leurs banquiers réclamaient des indicateurs de durabilité, et ils ne savaient pas par où commencer.</p>
+      <p><strong>AKILI ESG est né de cette rencontre.</strong> Entre une exigence académique de rigueur et une demande concrète d’entreprises ouest-africaines. Nous ne sommes ni un cabinet de communication standard, ni un simple bureau d’études. Nous sommes l’allié qui transforme la contrainte réglementaire en récit de crédibilité.</p>
+    </div>
+    <div class="story-stats">
+      <div style="margin-bottom: 32px;"><span class="stat-number">2 926</span><br>rapports analysés</div>
+      <div style="margin-bottom: 32px;"><span class="stat-number">6</span><br>modules de service</div>
+      <div><span class="stat-number">1</span><br>indice propriétaire RADF</div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo"><span class="brand-mark">A</span><span>AKILI ESG</span><span class="nav-slogan" style="margin-left: 8px;">L'intelligence au service de la durabilité</span></div>
+    <ul class="footer-links"><li><a onclick="showPage('home')">Accueil</a></li><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('equipe')">Équipe</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul>
+    <p class="footer-legal">© 2025 AKILI ESG · Abidjan, Côte d'Ivoire</p>
+  </footer>
+</div>
+
+
+
+
+
+
+
+<!-- ================= PAGE ÉQUIPE (avec photo et fallback) ================= -->
+<div id="page-equipe" class="page">
+  <div class="team-hero">
+    <p class="section-eyebrow">Notre équipe</p>
+    <h1 class="page-title">Une expertise<br><em style="font-style:italic;color:var(--ochre)">de terrain et de recherche.</em></h1>
+    <div class="team-intro-grid">
+      <div class="team-lead-card">
+        <div class="founder-flex">
+          <div class="founder-content">
+            <p class="founder-tag">Fondateur & Directeur</p>
+            <h2 class="founder-name">Karamoko<br>Diaby</h2>
+            <p class="founder-role">
+              Analyste ESG et spécialiste de la communication non financière, Karamoko Diaby accompagne les entreprises dans la structuration et la valorisation de leur démarche de durabilité. Fort d'une expérience opérationnelle en analyse ESG — évaluation de portefeuilles, notation extra-financière et audit de reporting —, il a développé une expertise pointue à l'intersection de la finance durable et de la communication institutionnelle.<br><br>
+              Chercheur en sciences de gestion à l'Université Paris 8, il est l'auteur de l'indice RADF, construit sur un corpus de 2 926 documents produits par les six principaux groupes bancaires français sur dix ans. Cet indice mesure l'écart entre les engagements ESG déclarés et les preuves effectivement apportées — un outil de rigueur autant que de crédibilité.<br><br>
+              Titulaire de deux masters — Finance & Gestion des Actifs (Paris Nanterre) et Management (CNAM) —, il intervient en Afrique de l'Ouest auprès des ETI et PME de la zone OHADA, avec une maîtrise des référentiels CSRD, ESRS, VSME et Note 35 OHADA.
+            </p>
+            <div class="founder-expertise">
+              <span class="expertise-tag">Analyse ESG</span><span class="expertise-tag">Communication non financière</span>
+              <span class="expertise-tag">CSRD / ESRS</span><span class="expertise-tag">Note 35 OHADA</span>
+              <span class="expertise-tag">Indice RADF</span><span class="expertise-tag">Double matérialité</span>
+              <span class="expertise-tag">Finance durable</span><span class="expertise-tag">Analyse discursive</span>
+            </div>
+          </div>
+          <div class="founder-photo">
+            <img src="photos_KD.jpeg" alt="Karamoko Diaby, fondateur d'AKILI ESG" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="display:none; width:100%; aspect-ratio:1/1; background:#2D4A3E; border-radius:4px; align-items:center; justify-content:center; color:var(--ochre); font-family:var(--font-display); font-size:32px;">KD</div>
+          </div>
+        </div>
+      </div>
+      <div class="team-values">
+        <p class="section-eyebrow" style="margin-bottom:24px">Notre façon de travailler</p>
+        <div class="value-item"><span class="value-label">Rigueur</span><span class="value-desc">Chaque engagement que vous publiez doit être défendable devant un auditeur. Nous ne fabriquons pas de communication, nous construisons de la preuve.</span></div>
+        <div class="value-item"><span class="value-label">Proximité</span><span class="value-desc">Nous travaillons dans votre langue, dans votre contexte réglementaire, avec vos équipes. Pas un rapport standardisé importé d'Europe.</span></div>
+        <div class="value-item"><span class="value-label">Clarté</span><span class="value-desc">Un bon rapport de durabilité est lisible par votre DG, votre banquier et votre auditeur. Nous rédigeons pour les trois.</span></div>
+        <div class="value-item"><span class="value-label">Mesure</span><span class="value-desc">L'indice RADF objective notre travail. Vous recevez un score, pas une promesse.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="testimonials-section">
+    <p class="section-eyebrow">Témoignages</p>
+    <h2 class="section-title">Ce que disent<br><em>nos clients.</em></h2>
+    <div class="testimonials-grid">
+      <div class="testi-card"><div class="testi-quote-mark">"</div><p class="testi-text">AKILI ESG nous a permis de structurer notre premier rapport VSME en moins de trois mois. Le score RADF nous a donné une vision claire de ce que nos partenaires financiers allaient retenir — et des points à corriger avant publication.</p><div class="testi-separator"></div><div class="testi-author"><span class="testi-name">Adjoua M. Kouassi</span><span class="testi-company">Directrice RSE · PME agroalimentaire, Abidjan</span><div class="testi-score"><span class="testi-radf">RADF Score : B+</span></div></div></div>
+      <div class="testi-card"><div class="testi-quote-mark">"</div><p class="testi-text">La rigueur méthodologique de Karamoko est rare sur le marché ivoirien. Nous avons utilisé le rapport produit directement dans notre dossier de levée de fonds auprès d'un investisseur institutionnel européen. Résultat : zéro question sur le volet ESG.</p><div class="testi-separator"></div><div class="testi-author"><span class="testi-name">Ibrahim Sangaré</span><span class="testi-company">Directeur Financier · ETI industrielle, zone UEMOA</span><div class="testi-score"><span class="testi-radf">RADF Score : A</span></div></div></div>
+      <div class="testi-card"><div class="testi-quote-mark">"</div><p class="testi-text">La veille réglementaire mensuelle nous fait économiser des heures de travail. Elle est devenue notre référence interne sur la CSRD et la Note 35 OHADA — bien plus fiable que ce que nous trouvions ailleurs sur le marché.</p><div class="testi-separator"></div><div class="testi-author"><span class="testi-name">Marie-Claire Brou</span><span class="testi-company">Responsable RSE · Filiale d'un groupe français, Abidjan</span><div class="testi-score"><span class="testi-radf">Abonnement Veille</span></div></div></div>
+    </div>
+  </div>
+  <div class="ecosystem-section">
+    <p class="section-eyebrow">Notre écosystème</p>
+    <h2 class="section-title">Des experts mobilisés<br><em>à chaque étape.</em></h2>
+    <div class="eco-grid">
+      <div class="eco-card"><div class="eco-icon">§</div><h3 class="eco-title">Experts réglementaires</h3><p class="eco-desc">Juristes et consultants spécialisés CSRD, droit OHADA et réglementation financière BRVM. Mobilisés pour la validation juridique des publications.</p></div>
+      <div class="eco-card"><div class="eco-icon">✦</div><h3 class="eco-title">Designers éditoriaux</h3><p class="eco-desc">Directeurs artistiques spécialisés en communication réglementée et rapports annuels. Mise en page exigeante, adaptée à votre charte.</p></div>
+      <div class="eco-card"><div class="eco-icon">◈</div><h3 class="eco-title">Experts sectoriels</h3><p class="eco-desc">Profils dédiés par secteur : agro-industrie, énergie, finance, BTP, FMCG. Pertinence sectorielle garantie de vos KPI et narratifs.</p></div>
+      <div class="eco-card"><div class="eco-icon">∑</div><h3 class="eco-title">Analystes de données</h3><p class="eco-desc">Traitement de vos données brutes (carbone, social, eau, déchets) pour produire des indicateurs auditables et comparables.</p></div>
+      <div class="eco-card"><div class="eco-icon">⊕</div><h3 class="eco-title">Partenaires audit</h3><p class="eco-desc">Liens avec des cabinets d'audit et d'expertise comptable présents en Côte d'Ivoire pour préparer vos équipes à la vérification tierce.</p></div>
+      <div class="eco-card"><div class="eco-icon">→</div><h3 class="eco-title">Formateurs internes</h3><p class="eco-desc">Montée en compétence de vos équipes sur les référentiels ESG, la collecte de données et la gestion de projet reporting.</p></div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo"><span class="brand-mark">A</span><span>AKILI ESG</span><span class="nav-slogan" style="margin-left: 8px;">L'intelligence au service de la durabilité</span></div>
+    <ul class="footer-links"><li><a onclick="showPage('home')">Accueil</a></li><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('histoire')">Notre histoire</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul>
+    <p class="footer-legal">© 2025 AKILI ESG · Abidjan, Côte d'Ivoire</p>
+  </footer>
+</div>
+
+
+
+
+
+
+
+<!-- ================= PAGE CONTACT ================= -->
+<div id="page-contact" class="page">
+  <div class="contact-layout">
+    <div class="contact-left">
+      <div>
+        <p class="section-eyebrow">Nous écrire</p>
+        <h1 class="contact-title">Parlons de<br>votre projet<br><em>de reporting.</em></h1>
+        <p class="contact-body">Que vous débutiez votre première publication ou que vous souhaitiez structurer votre démarche CSRD, nous vous proposons un premier échange de 30 minutes sans engagement.</p>
+      </div>
+      <div class="contact-details">
+        <div class="contact-detail-item"><span class="cd-label">Localisation</span><span class="cd-value">Abidjan, Plateau — Côte d'Ivoire</span></div>
+        <div class="contact-detail-item"><span class="cd-label">Zone d'intervention</span><span class="cd-value">Afrique de l'Ouest (CEDEAO / OHADA)</span></div>
+        <div class="contact-detail-item"><span class="cd-label">Téléphone</span><a href="tel:+33616483558" class="cd-link">+33 6 16 48 35 58</a></div>
+        <div class="contact-detail-item"><span class="cd-label">WhatsApp</span><a href="https://wa.me/33616483558?text=Bonjour%20Karamoko%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services%20AKILI%20ESG." target="_blank" rel="noopener" class="cd-link cd-link-whatsapp">💬 Écrire sur WhatsApp →</a></div>
+        <div class="contact-detail-item"><span class="cd-label">LinkedIn</span><a href="https://www.linkedin.com/in/karamoko-diaby-ab92a76b/" target="_blank" rel="noopener" class="cd-link">Karamoko Diaby →</a></div>
+        <div class="contact-detail-item"><span class="cd-label">Référentiels</span><span class="cd-value">CSRD · ESRS · Note 35 OHADA · VSME</span></div>
+        <div style="margin-top:32px;">
+          <a href="https://calendly.com/karamokobehdiaby/30min" target="_blank" rel="noopener" class="btn-calendly" id="calendly-btn">
+            📅 Choisir un créneau sur Calendly →
+          </a>
+          <p style="font-size:11px;color:rgba(245,240,230,0.35);margin-top:8px;">Réservation directe · 30 min · Sans engagement</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h2 class="form-title">Demande de rendez-vous</h2>
+      <form class="form-grid" action="https://formspree.io/f/maqvdvwv" method="POST" onsubmit="handleFormspreeSubmit(event)">
+        <input type="hidden" name="_subject" value="Nouvelle demande — AKILI ESG">
+        <input type="hidden" name="_language" value="fr">
+        <div class="form-row"><div class="form-group"><label class="form-label">Prénom</label><input type="text" name="prenom" class="form-input" placeholder="Marie" required></div><div class="form-group"><label class="form-label">Nom</label><input type="text" name="nom" class="form-input" placeholder="Koné" required></div></div>
+        <div class="form-group"><label class="form-label">Entreprise</label><input type="text" name="entreprise" class="form-input" placeholder="Société XYZ CI" required></div>
+        <div class="form-group"><label class="form-label">Email professionnel</label><input type="email" name="email" class="form-input" placeholder="m.kone@xyz.ci" required></div>
+        <div class="form-group"><label class="form-label">Votre besoin</label><select name="besoin" class="form-select"><option value="">Sélectionnez une option</option><option>Première publication VSME / Note 35 OHADA (PME)</option><option>Rapport de durabilité CSRD (ETI / filiale)</option><option>Audit et score RADF d'un rapport existant</option><option>Formation équipes internes</option><option>Abonnement veille réglementaire</option><option>Autre / je ne sais pas encore</option></select></div>
+        <div class="form-group"><label class="form-label">Message (facultatif)</label><textarea name="message" class="form-textarea" placeholder="Décrivez brièvement votre situation, votre secteur, vos éventuelles contraintes calendaires..."></textarea></div>
+        <div><button type="submit" class="form-submit" id="contact-submit-btn">Envoyer la demande →</button><p class="form-note">Réponse sous 48 heures ouvrées. Premier échange de 30 min sans engagement.</p></div>
+        <div class="form-success" id="form-success">✓ Votre demande a bien été envoyée. Karamoko Diaby vous contactera dans les 48 heures.</div>
+      </form>
+    </div>
+  </div>
+  <div class="faq-section">
+    <p class="section-eyebrow">FAQ réglementaire</p>
+    <h2 class="section-title">Les questions<br><em>que tout le monde pose.</em></h2>
+    <div class="faq-list">
+
+            <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text"><strong>CSRD et filiales africaines : les 10 questions les plus fréquentes</strong></span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-tag">CSRD · Filiales · Afrique</p>
+          <div class="faq-a-text">
+            <p><strong>Q1 : Ma filiale ivoirienne est à 100 % détenue par un groupe français. Le groupe n’a encore rien demandé. Dois-je agir ?</strong><br>
+            Oui, anticipez. Contactez votre direction RSE groupe. Proposez une feuille de route. Les groupes proactifs valorisent les filiales qui prennent les devants.</p>
+
+            <p><strong>Q2 : Quels sont les risques si ma filiale ne transmet pas les données ?</strong><br>
+            La maison mère peut être sanctionnée (amende jusqu’à 10 M€). En retour, elle peut exclure la filiale des appels d’offres internes, ou même décider de la céder.</p>
+
+            <p><strong>Q3 : Faut-il un logiciel coûteux pour collecter les données ESRS ?</strong><br>
+            Non. Au début, un simple Excel structuré permet de couvrir 80 % des indicateurs de niveau 1 (effectifs, consommations, accidents). Des outils comme EcoVadis ou VSME peuvent être demandés par les donneurs d’ordre.</p>
+
+            <p><strong>Q4 : Notre filiale n’a pas de service RH formel. Comment suivre l’écart de rémunération homme-femme ?</strong><br>
+            Commencez par un état des lieux simple : relevez les salaires de base sur une période donnée, anonymisez les données, calculez la moyenne par genre. C’est acceptable pour un premier reporting.</p>
+
+            <p><strong>Q5 : Le Scope 3 (émissions indirectes) nous fait peur. Est-ce vraiment obligatoire ?</strong><br>
+            Pour une filiale, une partie du Scope 3 est demandée (achats de petit équipement, déplacements pros, fret). Vous pouvez utiliser des facteurs d’émission moyens (ex. : base Carbone de l’ADEME). L’exhaustivité parfaite n’est pas exigée en année 1.</p>
+
+            <p><strong>Q6 : Que faire en cas de joint-venture (50/50 avec un partenaire local) ?</strong><br>
+            Si le groupe européen a le contrôle exclusif (selon IFRS 10), la filiale est concernée. En cas de contrôle conjoint, les règles sont floues – consultez le groupe et un avocat.</p>
+
+            <p><strong>Q7 : Le RGPD s’applique-t-il quand on transmet des données sur les salaires ?</strong><br>
+            Oui, si la filiale traite des données de citoyens européens (cas rare en Afrique). Par sécurité, anonymisez toujours les données personnelles avant envoi à la maison mère.</p>
+
+            <p><strong>Q8 : En résumé, comment savoir si je suis concerné ?</strong><br>
+            <strong>Tableau récapitulatif :</strong><br>
+            – Filiale à 100 % d’un groupe européen, CA groupe > 150 M€ → <strong>Oui</strong> (obligation de fournir les données au groupe)<br>
+            – Filiale à 100 %, CA groupe < 150 M€ → Non directement, mais indirectement via contrats<br>
+            – Fournisseur local indépendant (sans lien de capital) → Non (sauf clause contractuelle)<br>
+            – PME locale sans lien avec l’UE → Non</p>
+
+            <p><strong>Q9 : Quand faut-il commencer ?</strong><br>
+            Dès maintenant. Pour les données de l’exercice 2025, le reporting est prévu en 2026. Vous avez donc moins d’un an pour collecter les données rétrospectives.</p>
+
+            <p><strong>Q10 : Où trouver de l’aide technique ?</strong><br>
+            Consultez les guides de l’EFRAG (European Financial Reporting Advisory Group), les chambres de commerce franco-africaines, ou des consultants locaux spécialisés comme <strong>AKILI ESG</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">La Note 35 OHADA est-elle obligatoire pour mon entreprise ?</span><div class="faq-icon">+</div></button><div class="faq-answer"><p class="faq-tag">OHADA · Obligation</p><p class="faq-a-text">La Note 35 de l'OHADA impose aux entreprises d'une certaine taille établies dans les États membres de produire des informations extra-financières dans leurs états financiers annuels. En pratique, les sociétés dont le chiffre d'affaires dépasse un seuil fixé par les autorités nationales, ou celles cotées sur la BRVM, sont directement concernées. Mais au-delà de l'obligation stricte, un nombre croissant de donneurs d'ordre, de banques commerciales et de fonds d'investissement actifs en zone UEMOA conditionnent leur engagement à la production d'un rapport extra-financier structuré — rendant la démarche stratégique même pour les entreprises qui ne seraient pas formellement obligées.</p></div></div>
+
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">Quelle est la différence entre la CSRD et le standard VSME ?</span><div class="faq-icon">+</div></button><div class="faq-answer"><p class="faq-tag">CSRD · VSME · Europe</p><p class="faq-a-text">La CSRD (Corporate Sustainability Reporting Directive) est la directive européenne qui s'applique aux grandes entreprises et aux sociétés cotées dans l'UE — ainsi qu'à leurs filiales hors UE dont le chiffre d'affaires consolidé dépasse 150 M€. Elle impose des rapports détaillés selon les normes ESRS. Le VSME (Voluntary Standard for Small and Medium Enterprises) est une norme simplifiée, d'application volontaire, conçue pour les PME qui ne sont pas directement soumises à la CSRD mais qui sont sollicitées par leurs clients ou partenaires financiers européens pour produire des données ESG.</p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">Mon entreprise doit-elle réaliser une analyse de double matérialité ?</span><div class="faq-icon">+</div></button><div class="faq-answer"><p class="faq-tag">Double matérialité · ESRS</p><p class="faq-a-text">La double matérialité est au cœur des ESRS : elle consiste à identifier à la fois les enjeux environnementaux et sociaux qui impactent votre entreprise (matérialité financière) et les impacts que votre activité produit sur l'environnement et la société (matérialité d'impact). Si vous êtes soumis à la CSRD ou si vous cherchez à aligner votre rapport sur les ESRS, cette analyse est obligatoire. Pour un rapport aligné sur la Note 35 OHADA ou le VSME, elle reste fortement recommandée : elle structure votre démarche, renforce la crédibilité de votre publication et permet d'anticiper les attentes de vos parties prenantes. C'est l'une des premières étapes de notre Module 01.</p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">Qu'est-ce que l'indice RADF et comment est-il calculé ?</span><div class="faq-icon">+</div></button><div class="faq-answer"><p class="faq-tag">RADF · Méthodologie</p><p class="faq-a-text">Le RADF (Rhétorique, Adéquation, Données, Faits) est un indice propriétaire développé à partir d'une recherche doctorale en sciences de gestion portant sur les grandes banques françaises. Il mesure, chapitre par chapitre d'un rapport de durabilité, l'écart entre les engagements déclarés et les preuves effectivement fournies. Le calcul repose sur quatre axes : l'analyse du registre lexical (proportion d'affirmations fortes vs modalisées), la cohérence entre les thèmes traités et les enjeux matériels identifiés, la densité des indicateurs chiffrés par rapport aux énoncés qualitatifs, et la présence de preuves concrètes et datées. Chaque rapport reçoit un score par chapitre et un score global, accompagné de recommandations précises. C'est à la fois un outil de contrôle qualité avant publication et un argument de crédibilité auprès de vos parties prenantes.</p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">En combien de temps peut-on produire un rapport de durabilité complet ?</span><div class="faq-icon">+</div></button><div class="faq-answer"><p class="faq-tag">Délais · Production</p><p class="faq-a-text">Pour une première publication, nous planifions en général 8 semaines à partir du lancement effectif de la mission. La phase de diagnostic et de collecte de données (Modules 01 et 02) représente 3 à 4 semaines, selon la disponibilité des interlocuteurs internes et la qualité des données existantes. La rédaction, la validation RADF et la mise en page représentent les 4 à 5 semaines suivantes. Pour les entreprises qui renouvellent une publication annuelle, le délai peut être réduit à 5 à 6 semaines grâce à la réutilisation du cadre méthodologique et de la base de données KPI construite lors de la première mission.</p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">Nos données internes sont-elles suffisantes pour commencer ?</span><div class="faq-icon">+</div></button><div class="faq-answer"><p class="faq-tag">Données · Préparation</p><p class="faq-a-text">La plupart de nos clients démarrent avec des données partielles, dispersées ou non structurées — et c'est tout à fait normal. Notre Module 02 est précisément conçu pour auditer vos données existantes, identifier les lacunes et mettre en place un protocole de collecte adapté à vos moyens. Nous travaillons souvent à partir de fichiers Excel, de rapports internes, de données RH ou financières déjà disponibles. Ce qui compte au départ, c'est la volonté de construire une démarche solide — pas la perfection des données initiales. Nous vous guidons pas à pas pour atteindre un niveau de qualité publiable et auditable.</p></div></div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo"><span class="brand-mark">A</span><span>AKILI ESG</span><span class="nav-slogan" style="margin-left: 8px;">L'intelligence au service de la durabilité</span></div>
+    <ul class="footer-links"><li><a onclick="showPage('home')">Accueil</a></li><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('histoire')">Notre histoire</a></li><li><a onclick="showPage('equipe')">Équipe</a></li></ul>
+    <p class="footer-legal">© 2025 AKILI ESG · Abidjan, Côte d'Ivoire</p>
+  </footer>
+</div>
+
+
+
+<!-- ================= PAGE BLOG (avec articles complets) ================= -->
+<div id="page-blog" class="page">
+  <div class="blog-hero">
+    <p class="section-eyebrow">Ressources & Décryptages</p>
+    <h1 class="page-title" style="color:var(--cream)">Le reporting ESG<br><em style="color:var(--ochre-light)">expliqué simplement.</em></h1>
+    <div class="blog-filters">
+      <button class="blog-filter active" onclick="filterBlog('tous', this)">Tous les articles</button>
+      <button class="blog-filter" onclick="filterBlog('ohada', this)">OHADA</button>
+      <button class="blog-filter" onclick="filterBlog('csrd', this)">CSRD</button>
+      <button class="blog-filter" onclick="filterBlog('ecovadis', this)">EcoVadis</button>
+      <button class="blog-filter" onclick="filterBlog('esg', this)">ESG Afrique</button>
+      <button class="blog-filter" onclick="filterBlog('radf', this)">Indice RADF</button>
+    </div>
+  </div>
+  <div class="blog-grid-section">
+    <div class="blog-grid" id="blog-grid">
+      <!-- Les 6 cartes du blog (identiques à celles du code fonctionnel) -->
+      <div class="blog-card" data-cat="ohada" onclick="openArticle(0)"><div class="blog-card-meta"><span class="blog-cat">OHADA</span><span class="blog-read-time">5 min de lecture</span></div><h3 class="blog-card-title">Note 35 OHADA : ce que votre entreprise doit publier en 2025</h3><p class="blog-card-excerpt">Obligations, seuils d'application, indicateurs attendus — tout ce qu'il faut savoir pour se mettre en conformité sans se perdre dans les textes.</p><div class="blog-card-author"><div class="blog-author-avatar">K</div><div><div class="blog-author-name">Karamoko Diaby</div><div class="blog-author-date">Avril 2025</div></div></div><span class="blog-card-link">Lire l'article →</span></div>
+      <div class="blog-card" data-cat="ecovadis" onclick="openArticle(1)"><div class="blog-card-meta"><span class="blog-cat">EcoVadis</span><span class="blog-read-time">6 min de lecture</span></div><h3 class="blog-card-title">EcoVadis en zone UEMOA : comment préparer votre première évaluation</h3><p class="blog-card-excerpt">De plus en plus d'entreprises ivoiriennes reçoivent une invitation EcoVadis de leurs clients européens. Voici comment aborder le questionnaire avec méthode.</p><div class="blog-card-author"><div class="blog-author-avatar">K</div><div><div class="blog-author-name">Karamoko Diaby</div><div class="blog-author-date">Mars 2025</div></div></div><span class="blog-card-link">Lire l'article →</span></div>
+      <div class="blog-card" data-cat="csrd" onclick="openArticle(2)"><div class="blog-card-meta"><span class="blog-cat">CSRD</span><span class="blog-read-time">7 min de lecture</span></div><h3 class="blog-card-title">CSRD et filiales africaines : êtes-vous concerné ?</h3><p class="blog-card-excerpt">La directive européenne s'étend au-delà des frontières de l'UE. Si vous êtes filiale ou fournisseur d'un groupe européen, voici ce que cela implique concrètement pour vous.</p><div class="blog-card-author"><div class="blog-author-avatar">K</div><div><div class="blog-author-name">Karamoko Diaby</div><div class="blog-author-date">Février 2025</div></div></div><span class="blog-card-link">Lire l'article →</span></div>
+      <div class="blog-card" data-cat="esg" onclick="openArticle(3)"><div class="blog-card-meta"><span class="blog-cat">ESG Afrique</span><span class="blog-read-time">5 min de lecture</span></div><h3 class="blog-card-title">Double matérialité : guide pratique pour les ETI d'Afrique de l'Ouest</h3><p class="blog-card-excerpt">Comprendre la double matérialité en 2025, c'est identifier à la fois ce qui vous expose et ce que vous faites subir. Un exercice stratégique, pas un simple formulaire.</p><div class="blog-card-author"><div class="blog-author-avatar">K</div><div><div class="blog-author-name">Karamoko Diaby</div><div class="blog-author-date">Janvier 2025</div></div></div><span class="blog-card-link">Lire l'article →</span></div>
+      <div class="blog-card" data-cat="radf" onclick="openArticle(4)"><div class="blog-card-meta"><span class="blog-cat">Indice RADF</span><span class="blog-read-time">6 min de lecture</span></div><h3 class="blog-card-title">Pourquoi votre rapport ESG ne convainc pas vos investisseurs</h3><p class="blog-card-excerpt">Un rapport peut être complet, bien mis en page et parfaitement conforme — et pourtant ne pas convaincre. L'indice RADF explique pourquoi, et comment y remédier.</p><div class="blog-card-author"><div class="blog-author-avatar">K</div><div><div class="blog-author-name">Karamoko Diaby</div><div class="blog-author-date">Décembre 2024</div></div></div><span class="blog-card-link">Lire l'article →</span></div>
+      <div class="blog-card" data-cat="esg" onclick="openArticle(5)"><div class="blog-card-meta"><span class="blog-cat">ESG Afrique</span><span class="blog-read-time">4 min de lecture</span></div><h3 class="blog-card-title">Financement vert en zone UEMOA : les nouvelles exigences ESG des bailleurs</h3><p class="blog-card-excerpt">DFI, fonds d'impact, banques commerciales régionales : les critères ESG conditionnent désormais l'accès au financement. Tour d'horizon des attentes en 2025.</p><div class="blog-card-author"><div class="blog-author-avatar">K</div><div><div class="blog-author-name">Karamoko Diaby</div><div class="blog-author-date">Novembre 2024</div></div></div><span class="blog-card-link">Lire l'article →</span></div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo"><span class="brand-mark">A</span><span>AKILI ESG</span><span class="nav-slogan" style="margin-left: 8px;">L'intelligence au service de la durabilité</span></div>
+    <ul class="footer-links"><li><a onclick="showPage('home')">Accueil</a></li><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('histoire')">Notre histoire</a></li><li><a onclick="showPage('equipe')">Équipe</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul>
+    <p class="footer-legal">© 2025 AKILI ESG · Abidjan, Côte d'Ivoire</p>
+  </footer>
+</div>
+
+<!-- MODAL ARTICLE + CHAT + SCRIPTS -->
+<div class="article-overlay" id="article-overlay" onclick="closeArticleOnBg(event)">
+  <div class="article-modal" id="article-modal">
+    <div class="article-modal-header">
+      <button class="article-modal-close" onclick="closeArticle()">✕</button>
+      <p class="article-modal-cat" id="modal-cat"></p>
+      <h2 class="article-modal-title" id="modal-title"></h2>
+      <p class="article-modal-meta" id="modal-meta"></p>
+    </div>
+    <div class="article-modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- ═══ PAGE DÉMO ═══ -->
+<div id="page-demo" class="page">
+
+  <!-- HERO -->
+  <div class="demo-hero">
+    <div class="demo-hero-eyebrow">⚡ AKILI ESG — Plateforme de reporting automatisé</div>
+    <h1>Le rapport RSE de votre entreprise,<br><em>produit en quelques semaines.</em></h1>
+    <p>AKILI ESG automatise la collecte, la structuration et la rédaction de vos rapports de durabilité — conformes CSRD, Note 35 OHADA et EcoVadis. Conçue nativement pour l'Afrique de l'Ouest.</p>
+    <div class="demo-hero-ctas">
+      <a href="https://calendly.com/karamokobehdiaby/30min" target="_blank" rel="noopener" class="btn-demo-primary">📅 Voir la démo en live →</a>
+      <button class="btn-demo-ghost" onclick="showPage('contact')">Parler à un expert</button>
+    </div>
+  </div>
+
+<!-- CAPTURE PRODUIT -->
+<div class="demo-mockup-wrap">
+  <div class="demo-browser">
+    <div class="demo-browser-bar">
+      <div class="demo-browser-dot" style="background:#FF5F57"></div>
+      <div class="demo-browser-dot" style="background:#FEBC2E"></div>
+      <div class="demo-browser-dot" style="background:#28C840"></div>
+      <div class="demo-browser-url">localhost:3000/bibliotheque/indicateur</div>
+    </div>
+    <img class="demo-product-image" src="assets/akili-platform-indicator.png" alt="Interface AKILI ESG affichant la fiche détaillée d'un indicateur CSRD">
+  </div>
+</div>
+
+<!-- CAPTURE CLIMAT -->
+<div class="demo-mockup-wrap secondary">
+  <div class="demo-capture-head">
+    <p class="section-eyebrow">Pilotage climat</p>
+    <h2>Un tableau de bord pour suivre vos émissions et votre trajectoire.</h2>
+    <p>Le module climat met en évidence les émissions de GES, les postes contributeurs et les indicateurs utiles pour piloter la réduction dans le temps.</p>
+  </div>
+  <div class="demo-browser">
+    <div class="demo-browser-bar">
+      <div class="demo-browser-dot" style="background:#FF5F57"></div>
+      <div class="demo-browser-dot" style="background:#FEBC2E"></div>
+      <div class="demo-browser-dot" style="background:#28C840"></div>
+      <div class="demo-browser-url">localhost:3000/module-climat/bilans</div>
+    </div>
+    <img class="demo-product-image" src="assets/akili-module-climat.png" alt="Dashboard AKILI ESG du module climat montrant l'évolution des émissions de GES">
+  </div>
+</div>
+
+  <!-- FEATURES -->
+  <div class="demo-features">
+    <p class="section-eyebrow" style="text-align:center">Ce que la plateforme fait pour vous</p>
+    <h2 class="section-title" style="text-align:center;max-width:600px;margin:16px auto 0">Un outil conçu pour les équipes ESG d'Afrique de l'Ouest</h2>
+    <div class="demo-features-grid">
+      <div class="demo-feature">
+        <div class="demo-feature-icon">📚</div>
+        <div class="demo-feature-title">Référentiel complet</div>
+        <div class="demo-feature-desc">Tous les indicateurs ESRS/CSRD, Note 35 OHADA et EcoVadis pré-chargés, traduits et contextualisés pour vos secteurs.</div>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">🔄</div>
+        <div class="demo-feature-title">Collecte structurée</div>
+        <div class="demo-feature-desc">Campagnes de collecte multi-contributeurs, validation hiérarchique, pièces jointes et historique complet par indicateur.</div>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">📄</div>
+        <div class="demo-feature-title">Rapport automatisé</div>
+        <div class="demo-feature-desc">Génération du rapport RSE en quelques clics — narration assistée par IA, export PDF aux couleurs de votre entreprise.</div>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">🔍</div>
+        <div class="demo-feature-title">Audit trail intégré</div>
+        <div class="demo-feature-desc">Journal immuable de toutes les actions : qui a saisi quoi, quand, avec quelle preuve. Prêt pour l'auditeur externe.</div>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">📊</div>
+        <div class="demo-feature-title">Indice RADF</div>
+        <div class="demo-feature-desc">Score de cohérence exclusif AKILI ESG — mesure l'écart entre ce que vous déclarez et ce que vous démontrez réellement.</div>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">📶</div>
+        <div class="demo-feature-title">Conçu pour l'Afrique</div>
+        <div class="demo-feature-desc">Fonctionne sur connexion lente ou hors ligne. Interface en français. Support depuis Abidjan.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FINALE -->
+  <div class="demo-cta-section">
+    <h2>Voyez la plateforme<br>sur vos propres données.</h2>
+    <p>30 minutes suffisent pour comprendre ce que la plateforme peut faire pour votre entreprise.</p>
+    <div class="demo-cta-cards">
+      <div class="demo-cta-card">
+        <div class="demo-cta-card-label">🎯 Démo produit</div>
+        <h3>Voir AKILI ESG en action</h3>
+        <p>Démonstration live de la plateforme sur un cas concret de votre secteur. 30 min, en visio.</p>
+        <a href="https://calendly.com/karamokobehdiaby/30min" target="_blank" rel="noopener" class="btn-demo-primary">Réserver un créneau →</a>
+      </div>
+      <div class="demo-cta-card">
+        <div class="demo-cta-card-label">💬 Conseil</div>
+        <h3>Parler à Karamoko</h3>
+        <p>Vous avez des questions sur vos obligations réglementaires ou votre stratégie ESG. On en parle.</p>
+        <button class="btn-demo-ghost" onclick="showPage('contact')" style="width:100%;justify-content:center">Écrire un message →</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="brand-mark">A</span><span>AKILI ESG</span><span class="nav-slogan" style="margin-left:8px">L'intelligence au service de la durabilité</span></div>
+    <ul class="footer-links"><li><a onclick="showPage('home')">Accueil</a></li><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('blog')">Blog</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul>
+    <p class="footer-legal">© 2025 AKILI ESG · Abidjan, Côte d'Ivoire</p>
+  </footer>
+</div>
+
+<a id="whatsapp-float" href="https://wa.me/33616483558?text=Bonjour%20Karamoko%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services%20AKILI%20ESG." target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div id="chat-widget">
+  <button id="chat-toggle" onclick="toggleChat()" aria-label="Ouvrir l'assistant"><span id="chat-icon-open">💬</span><span id="chat-icon-close" style="display:none">✕</span></button>
+  <div id="chat-box">
+    <div id="chat-header"><div id="chat-header-info"><div id="chat-avatar">A</div><div><div id="chat-name">Assistant AKILI ESG</div><div id="chat-status">En ligne · Réponse immédiate</div></div></div></div>
+    <div id="chat-messages"><div class="chat-msg bot">Bonjour 👋 Je suis l'assistant AKILI ESG. Posez-moi vos questions sur nos services, tarifs, référentiels ou l'indice RADF.</div></div>
+    <div id="chat-suggestions"><button class="chat-chip" onclick="askQuestion('Quels sont vos services ?')">Nos services</button><button class="chat-chip" onclick="askQuestion('Quels sont vos tarifs ?')">Tarifs</button><button class="chat-chip" onclick="askQuestion('Qu\'est-ce que le RADF ?')">Indice RADF</button><button class="chat-chip" onclick="askQuestion('Comment vous contacter ?')">Contact</button></div>
+    <div id="chat-input-row"><input id="chat-input" type="text" placeholder="Posez votre question..." onkeydown="if(event.key==='Enter') sendMessage()"><button id="chat-send" onclick="sendMessage()">→</button></div>
+  </div>
+</div>
+
+<script>
+  // Adresse locale de votre SaaS pendant les tests.
+  // Si votre SaaS tourne sur un autre port, changez seulement cette ligne.
+  const SAAS_URL = 'http://localhost:3000';
+
+  function openSaas(path = '') {
+    const cleanPath = path.startsWith('/') ? path : '/' + path;
+    window.open(SAAS_URL + cleanPath, '_blank', 'noopener');
+  }
+
+  // ========== FONCTIONS PRINCIPALES ==========
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + id);
+    if (target) target.classList.add('active');
+
+    // Nav desktop
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+
+    // Nav mobile
+    document.querySelectorAll('.nav-mobile-menu a').forEach(a => a.classList.remove('active'));
+    const mnavEl = document.getElementById('mnav-' + id);
+    if (mnavEl) mnavEl.classList.add('active');
+
+    // Bouton démo actif
+    const demoBtn = document.getElementById('nav-demo');
+    if (demoBtn) demoBtn.classList.toggle('active', id === 'demo');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ========== MENU MOBILE ==========
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+  // Fermer le menu mobile si clic en dehors
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('hamburger');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+
+  window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-success').style.display = 'block';
+    e.target.querySelector('.form-submit').disabled = true;
+    e.target.querySelector('.form-submit').textContent = 'Envoyé ✓';
+  }
+  async function handleFormspreeSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('#contact-submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('form-success').style.display = 'block';
+        btn.textContent = 'Envoyé ✓';
+        form.reset();
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Envoyer la demande →';
+        alert('Une erreur est survenue. Contactez-nous directement sur WhatsApp.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer la demande →';
+      alert('Erreur réseau. Contactez-nous sur WhatsApp.');
+    }
+  }
+  function handleDemoSubmit(e) {
+    e.preventDefault();
+    document.getElementById('demo-success').style.display = 'block';
+    e.target.querySelector('.form-submit').disabled = true;
+    e.target.querySelector('.form-submit').textContent = 'Demande envoyée ✓';
+  }
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+  function toggleChat() {
+    const box = document.getElementById('chat-box');
+    const iconOpen = document.getElementById('chat-icon-open');
+    const iconClose = document.getElementById('chat-icon-close');
+    const isOpen = box.classList.contains('open');
+    box.classList.toggle('open');
+    iconOpen.style.display = isOpen ? 'block' : 'none';
+    iconClose.style.display = isOpen ? 'none' : 'block';
+  }
+  function askQuestion(q) { document.getElementById('chat-input').value = q; sendMessage(); }
+  function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const text = input.value.trim();
+    if (!text) return;
+    appendMessage(text, 'user');
+    input.value = '';
+    document.getElementById('chat-suggestions').style.display = 'none';
+    setTimeout(() => appendMessage(getReply(text), 'bot'), 500);
+  }
+  function appendMessage(text, who) {
+    const msgs = document.getElementById('chat-messages');
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + who;
+    div.innerHTML = text;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function getReply(q) {
+    const t = q.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    if (/service|module|offre/.test(t)) return 'AKILI ESG propose <strong>5 modules</strong> : Diagnostic ESG · Architecture narrative · Rédaction & score RADF · Design éditorial · Abonnement veille.';
+    if (/tarif|prix|fcfa/.test(t)) return 'Nos forfaits :<br>• <strong>Starter PME</strong> : 8–15 M FCFA<br>• <strong>Essential ETI</strong> : 20–40 M FCFA<br>• <strong>Premium filiale</strong> : 50–80 M FCFA<br>• <strong>Veille seule</strong> : 2–4 M FCFA/an';
+    if (/radf|indice/.test(t)) return "Le <strong>RADF</strong> (Rhétorique · Adéquation · Données · Faits) est un indice propriétaire qui mesure l'écart entre vos engagements ESG déclarés et les preuves apportées.";
+    if (/contact|rdv/.test(t)) return 'Vous pouvez nous joindre au <strong>+33 7 58 32 82 82</strong> ou via le <a href="#" onclick="showPage(\'contact\');toggleChat();return false;" style="color:var(--ochre)">formulaire de contact →</a>';
+    return 'Je vous invite à <a href="#" onclick="showPage(\'contact\');toggleChat();return false;" style="color:var(--ochre)">nous contacter directement →</a> pour un échange personnalisé.';
+  }
+  function filterBlog(cat, btn) {
+    document.querySelectorAll('.blog-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.blog-card').forEach(card => {
+      if (cat === 'tous' || card.dataset.cat === cat) card.style.display = 'flex';
+      else card.style.display = 'none';
+    });
+  }
+  // ========== ARTICLES COMPLETS (6, avec contenu réel) ==========
+  const articles = [
+    { cat: "OHADA", title: "Note 35 OHADA : ce que votre entreprise doit publier en 2025", meta: "Karamoko Diaby · avril 2025 · 5 min", body: `<p>Adoptée par le Conseil des ministres de l’OHADA, la <strong>Note 35</strong> (Acte uniforme relatif au droit comptable et à l’information financière) introduit des obligations de publication d’informations extra-financières pour certaines entités. En 2025, les seuils d’application sont les suivants (en vigueur dans la plupart des États membres, dont la Côte d’Ivoire) :</p>
+      <ul><li>Chiffre d’affaires > 500 millions FCFA ou total bilan > 250 millions FCFA : publication d’un rapport de gestion incluant des informations sur les risques environnementaux et sociaux.</li>
+      <li>Entreprises cotées sur la BRVM : obligation de publier un rapport extra-financier détaillé, quel que soit leur chiffre d’affaires.</li>
+      <li>Filiales de groupes étrangers : les sociétés mères des États membres de l'OHADA peuvent aussi être tenues de consolider des données ESG.</li></ul>
+      <p>La Note 35 s’inspire des principes de la directive européenne CSRD mais avec des seuils et des indicateurs adaptés au contexte ouest-africain. Les informations demandées portent sur :</p>
+      <ul><li>les consommations d’énergie, d’eau et les émissions de gaz à effet de serre (Scope 1 et 2 au minimum),</li>
+      <li>les effectifs, la formation, l’égalité professionnelle,</li>
+      <li>les mesures de lutte contre la corruption et les droits des parties prenantes.</li></ul>
+      <p>Le non-respect expose à des sanctions financières (amendes) et à une perte de confiance des partenaires bancaires. Depuis 2023, plusieurs banques de la place (dont BICICI, NSIA, Ecobank) exigent un reporting ESG conforme à la Note 35 pour l’octroi de prêts d’investissement.</p>
+      <p><strong>Notre conseil :</strong> commencez par un diagnostic de double matérialité (cf. article dédié) pour identifier les enjeux matériels spécifiques à votre secteur. AKILI ESG vous accompagne dans la rédaction du rapport de gestion extra-financier aligné sur la Note 35.</p>` },
+    { cat: "EcoVadis", title: "EcoVadis en zone UEMOA : comment préparer votre première évaluation", meta: "Karamoko Diaby · mars 2025 · 6 min", body: `<p>EcoVadis est la principale plateforme d’évaluation des performances RSE des fournisseurs. De plus en plus d’entreprises ivoiriennes reçoivent une invitation de leurs clients européens (soumis à la CSRD ou à des chartes fournisseurs). L’évaluation repose sur 21 critères répartis en 4 thèmes : Environnement, Social & Droits humains, Éthique, Achats responsables.</p>
+      <p>En zone UEMOA, le taux de réponse aux questionnaires EcoVadis reste faible (< 30 %), ce qui pénalise les fournisseurs locaux : sans notation, ils sont souvent exclus des appels d’offres internationaux. Selon les données EcoVadis 2024, le score médian des entreprises d’Afrique de l’Ouest est de 42/100, contre 51/100 pour la moyenne mondiale.</p>
+      <h3>Préparer sa première évaluation : étapes clés</h3>
+      <ul><li><strong>Audit des preuves existantes :</strong> politiques écrites, indicateurs (consommations, effectifs, heures de formation), certifications (ISO 14001, OHSAS, etc.).</li>
+      <li><strong>Documentation des actions concrètes :</strong> EcoVadis valorise les « actions mesurables » (ex : réduction de 10% de la consommation d’eau en un an).</li>
+      <li><strong>Alignement avec les référentiels locaux :</strong> intégrer la Note 35 OHADA et les spécificités du droit du travail ivoirien.</li>
+      <li><strong>Préparation du questionnaire :</strong> 45 minutes à 2 heures selon la taille. Répondre en anglais ou en français.</li></ul>
+      <p>Un score compris entre 45 et 60 (Silver) est généralement suffisant pour satisfaire les grands donneurs d’ordre. AKILI ESG propose un diagnostic pré-évaluation et un accompagnement complet jusqu’à l’obtention de la médaille.</p>` },
+    {   // CSRD (nouvelle version longue)
+      cat: "CSRD",
+      title: "CSRD : tout comprendre en version simplifiée pour les filiales africaines",
+      meta: "Karamoko Diaby · mars 2026 · 9 min",
+      body: `<h3><b>Introduction</b> </h3>
+      <p>La Corporate Sustainability Reporting Directive (CSRD) révolutionne le reporting de durabilité en Europe. Cette directive, qui remplace l’ancienne NFRD, impose de nouvelles obligations de transparence à plus de 50 000 entreprises européennes. Mais ce qui change aussi pour de nombreuses filiales africaines de groupes européens : elles devront désormais fournir des données ESG à leur maison mère. Décryptage des enjeux et de la marche à suivre.</p>
+      
+      <h3><b>Qu’est-ce que la CSRD ?</b></h3>
+      <p>La CSRD est une directive européenne entrée en vigueur en janvier 2023 qui :</p>
+      <ul><li>Étend le périmètre des entreprises concernées (grandes entreprises, PME cotées, et certaines filiales extra-européennes)</li>
+      <li>Standardise le reporting avec les normes ESRS (European Sustainability Reporting Standards)</li>
+      <li>Impose un audit externe des informations publiées</li>
+      <li>Exige une publication au format numérique (XBRL)</li></ul>
+      
+      <h3><b>Qui est concerné et quand ?</b></h3>
+      <p><strong>Calendrier d’application général</strong></p>
+      <ul><li>2024 → publication 2025 : Grandes entreprises déjà soumises à la NFRD</li>
+      <li>2025 → publication 2026 : Toutes les grandes entreprises européennes</li>
+      <li>2026 → publication 2027 : PME cotées, assurances, banques</li>
+      <li>2028 → publication 2029 : Entreprises non-UE avec filiales ou activités européennes importantes</li></ul>
+      <p><strong>Critères d’éligibilité (entreprises européennes)</strong><br>Sont concernées les entreprises respectant 2 des 3 critères suivants :</p>
+      <ul><li>Plus de 250 salariés</li>
+      <li>Chiffre d’affaires > 40 M€</li>
+      <li>Total bilan > 20 M€</li></ul>
+      <p><strong>Cas particulier : les filiales africaines des groupes européens</strong><br>Même si la filiale est située hors de l’Union européenne (Côte d’Ivoire, Sénégal, Cameroun, etc.), elle peut être concernée dès 2025 (premier reporting en 2026) si :</p>
+      <ul><li>Elle est détenue à 100 % (ou avec contrôle exclusif) par un groupe européen</li>
+      <li>Le chiffre d’affaires consolidé mondial du groupe dépasse 150 M€</li></ul>
+      <p>Dans ce cas, la filiale doit fournir à la maison mère des données ESG conformes aux normes ESRS. L’absence de données expose le groupe européen à des sanctions (jusqu’à 10 M€ d’amende).</p>
+      
+      <h3><b>Les normes ESRS : nouveau référentiel</b></h3>
+      <p>Les ESRS définissent les informations à publier. Elles sont organisées en deux grandes familles :</p>
+      <ul><li><strong>ESRS transversales</strong> (obligatoires pour tous) : ESRS 1 (Exigences générales), ESRS 2 (Informations générales – stratégie, gouvernance, analyse de matérialité)</li>
+      <li><strong>ESRS thématiques</strong> (selon la double matérialité) : Environnement (E1 à E5), Social (S1 à S4), Gouvernance (G1)</li></ul>
+      <p>Pour une filiale africaine non cotée, seuls les indicateurs ESRS de niveau 1 et parfois 2 sont généralement requis (empreinte carbone Scope 1, 2 et une partie du Scope 3, effectifs par genre, écarts de rémunération, politiques anti-corruption, impacts sur les communautés).</p>
+      
+      <h3><b>Méthodologie : l’approche double matérialité</b></h3>
+      <p>La CSRD introduit le concept de double matérialité :</p>
+      <ul><li><strong>Matérialité d’impact</strong> – Comment l’entreprise impacte l’environnement et la société (ex. : une filiale agricole qui consomme beaucoup d’eau)</li>
+      <li><strong>Matérialité financière</strong> – Comment les enjeux ESG affectent la performance financière (ex. : une usine exposée aux risques climatiques)</li></ul>
+      <p>Processus d’évaluation (à adapter même pour une filiale) :</p>
+      <ol><li>Cartographie des parties prenantes</li>
+      <li>Identification des impacts, risques et opportunités</li>
+      <li>Évaluation de la matérialité (critères ESRS)</li>
+      <li>Validation par la direction</li></ol>
+      
+      <h3><b>Structure du rapport CSRD</b></h3>
+      <p>Le rapport (au niveau du groupe européen) doit inclure : informations générales, gouvernance, analyse de matérialité, et pour chaque enjeu matériel : politiques, actions, objectifs, métriques. Les filiales africaines doivent fournir les données de base (KPIs) pour que le groupe puisse remplir ces sections.</p>
+      
+      <h3><b>Préparer la conformité CSRD</b></h3>
+      <p><strong>Phase 1 : Diagnostic et gap analysis</strong> – Évaluer l’écart entre vos données actuelles et les exigences ESRS, auditer vos systèmes de collecte.</p>
+      <p><strong>Phase 2 : Mise en œuvre</strong> – Réaliser l’analyse de double matérialité, déployer des outils légers de collecte (Excel structuré), former les équipes locales.</p>
+      <p><strong>Phase 3 : Production et audit</strong> – Rédiger ou alimenter le rapport conforme ESRS, organiser l’audit externe.</p>
+      
+      <h3><b>Défis et opportunités</b></h3>
+      <p><strong>Principaux défis (spécifiques aux filiales africaines)</strong> : disponibilité des données, compétences locales, coût perçu, fragilité des infrastructures.</p>
+      <p><strong>Opportunités business</strong> : amélioration de la gestion, renforcement de la confiance, accès facilité aux financements verts (BEI, AFD), avantage concurrentiel.</p><h3><b>Conclusion</b></h3>
+      <p>La CSRD marque une nouvelle ère du reporting de durabilité. Pour les filiales africaines de groupes européens, ce n’est pas une menace lointaine : dès 2025, il faudra fournir des données ESG. Bien que complexe, cette directive offre l’opportunité de structurer votre démarche environnementale et sociale, et de créer de la valeur durable. Chez AKILI ESG, notre expertise CSRD accompagne les filiales comme les maisons mères dans cette transformation réglementaire majeure.</p>`
+    },
+    { cat: "ESG Afrique", title: "Double matérialité : guide pratique pour les ETI d'Afrique de l'Ouest", meta: "Karamoko Diaby · janvier 2025 · 5 min", body: `<p>La <strong>double matérialité</strong> est le concept clé des normes ESRS et de la Note 35. Elle oblige l’entreprise à analyser :</p>
+      <ul><li>Les enjeux ESG qui <strong>affectent sa performance financière</strong> (matérialité financière : ex. hausse du prix de l’énergie, risque de pénurie d’eau).</li>
+      <li>Les impacts de l’entreprise <strong>sur l’environnement et la société</strong> (matérialité d’impact : ex. émissions polluantes, création d’emplois locaux).</li></ul>
+      <p>En pratique, l’analyse se déroule en 4 étapes :</p>
+      <ol><li><strong>Identification des parties prenantes</strong> (salariés, clients, fournisseurs, communauté locale, autorités).</li>
+      <li><strong>Cartographie des enjeux</strong> à partir de listes sectorielles (ex. pour l’agro-industrie : déforestation, usage d’engrais, conditions de travail).</li>
+      <li><strong>Scoring par matérialité</strong> : évaluation de la probabilité et de l’ampleur des impacts pour chaque enjeu.</li>
+      <li><strong>Validation de la matrice</strong> par la direction et publication dans le rapport.</li></ol>
+      <p>Une ETI ivoirienne du secteur de la logistique a par exemple identifié comme matériels : la consommation de carburant (financier et impact), la sécurité routière (impact social) et la corruption aux postes frontières (éthique). Cette analyse lui a permis de concentrer ses efforts sur 5 indicateurs clés, divisant par deux le travail de collecte.</p>
+      <p>AKILI ESG réalise pour vous cette analyse, incluant l’organisation d’ateliers avec vos équipes, la compilation des données et la production d’une matrice visuelle.</p>` },
+    { cat: "Indice RADF", title: "Pourquoi votre rapport ESG ne convainc pas vos investisseurs", meta: "Karamoko Diaby · décembre 2024 · 6 min", body: `<p>Nombre de rapports ESG affichent des engagements forts (« Nous réduirons nos émissions de 30 % d’ici 2030 ») mais n’apportent ni données chiffrées, ni preuves des actions engagées. Les investisseurs institutionnels (fonds de pension, banques de développement) analysent systématiquement cet <strong>écart de crédibilité</strong>. C’est pour objectiver cette distance que nous avons créé l’<strong>indice RADF</strong>.</p>
+      <p>RADF désigne :</p>
+      <ul><li><strong>R</strong>hétorique : niveau de précision des engagements (assertions fortes vs formulations conditionnelles).</li>
+      <li><strong>A</strong>déquation : correspondance entre les thèmes traités et les enjeux matériels identifiés.</li>
+      <li><strong>D</strong>onnées : densité des indicateurs chiffrés (KPI) par rapport aux déclarations qualitatives.</li>
+      <li><strong>F</strong>aits : présence de preuves concrètes (dates, projets, audits, certifications).</li></ul>
+      <p>Chaque section d’un rapport reçoit une note de 0 à 4 (ou A à D). Un rapport avec un score RADF élevé (A ou B) démontre une cohérence entre le dire et le faire. À l’inverse, un score D indique un rapport purement communicationnel, qui sera jugé insuffisant par un auditeur.</p>
+      <p>Notre recherche (corpus de 2 926 rapports des six premières banques françaises) a montré que les scores RADF les plus élevés sont corrélés à une meilleure notation extra-financière (Sustainalytics, MSCI). Pour les entreprises ouest-africaines, produire un rapport certifié RADF devient un véritable avantage concurrentiel face aux financeurs internationaux.</p>` },
+    { cat: "ESG Afrique", title: "Financement vert en zone UEMOA : les nouvelles exigences ESG des bailleurs", meta: "Karamoko Diaby · novembre 2024 · 4 min", body: `<p>La BRVM (Bourse Régionale des Valeurs Mobilières) a lancé en 2023 le segment « obligations vertes ». Plusieurs émissions ont déjà eu lieu (ex : BICICI, BOA). Mais pour y accéder, les entreprises doivent fournir un reporting ESG rigoureux, souvent basé sur les <strong>Green Bond Principles</strong> de l’ICMA.</p>
+      <p>Par ailleurs, les DFI (Banque mondiale, Proparco, AfDB, BIDC) exigent désormais des études d’impact environnemental et social (EIES) et des rappels annuels de performance ESG. Depuis 2024, le Fonds de Développement de l’UEMOA a intégré des clauses ESG dans ses lignes de crédit aux banques commerciales : celles-ci doivent certifier que leurs bénéficiaires finaux publient un rapport de durabilité minimal (souvent le VSME).</p>
+      <p><strong>Exemple concret :</strong> une PME ivoirienne spécialisée dans l’énergie solaire a obtenu un prêt de 2 milliards FCFA auprès d’une banque locale grâce à son rapport VSME validé par AKILI ESG, accompagné d’un score RADF B. La banque a considéré que le risque ESG était bien maîtrisé, ce qui a permis de baisser le taux d’intérêt de 150 points de base.</p>
+      <p>À noter : depuis janvier 2025, la BCEAO (Banque Centrale des États de l’Afrique de l’Ouest) encourage les établissements financiers à intégrer les risques climatiques dans leurs processus de prêt. Les entreprises sans reporting ESG structuré pourraient se voir refuser des crédits à moyen terme.</p>` }
+  ];
+  function openArticle(idx) {
+    const a = articles[idx];
+    document.getElementById('modal-cat').innerText = a.cat;
+    document.getElementById('modal-title').innerText = a.title;
+    document.getElementById('modal-meta').innerHTML = a.meta;
+    document.getElementById('modal-body').innerHTML = a.body;
+    document.getElementById('article-overlay').classList.add('open');
+  }
+  function closeArticle() { document.getElementById('article-overlay').classList.remove('open'); }
+  function closeArticleOnBg(e) { if (e.target === document.getElementById('article-overlay')) closeArticle(); }
+
+
+</script>
+
+<style>
+  .simulateur-hero { background: var(--forest); padding: 96px 64px 64px; }
+  .simulateur-intro { font-size: 15px; font-weight: 300; color: rgba(245,240,230,0.7); max-width: 700px; margin-top: 24px; }
+  .simulateur-container { padding: 64px; max-width: 900px; margin: 0 auto; }
+  .simulateur-question { margin-bottom: 32px; }
+  .simulateur-question .form-label { font-size: 15px; font-weight: 500; color: var(--forest); margin-bottom: 8px; display: block; }
+  .simulateur-resultat { margin-top: 48px; padding: 32px; background: var(--cream-dark); border-radius: 4px; border-left: 4px solid var(--ochre); }
+  .simulateur-contact { background: var(--cream-dark); padding: 48px 32px; border-radius: 4px; text-align: center; margin-top: 64px; }
+  @media (max-width: 900px) { .simulateur-container { padding: 32px 24px; } .simulateur-hero { padding: 56px 24px 40px; } }
+</style>
+
+<!-- ═══ PAGE SIMULATEUR ═══ -->
+<div id="page-simulateur" class="page">
+  <div class="simulateur-hero">
+    <p class="section-eyebrow">Outil de diagnostic</p>
+    <h1 class="page-title">Quel référentiel<br><em style="color:var(--ochre-light)">s'applique à vous ?</em></h1>
+    <p class="simulateur-intro">Répondez à 4 questions pour identifier en 2 minutes le cadre réglementaire qui s'applique à votre entreprise et le module AKILI ESG le plus adapté à votre situation.</p>
+  </div>
+  <div class="simulateur-container">
+    <div class="simulateur-question">
+      <label class="form-label">1. Quelle est la taille de votre entreprise ?</label>
+      <select class="form-select" id="q1" onchange="calcSimulateur()">
+        <option value="">Sélectionnez</option>
+        <option value="pme">PME — moins de 250 salariés ou CA &lt; 50 M€</option>
+        <option value="eti">ETI — entre 250 et 5 000 salariés</option>
+        <option value="filiale">Filiale d'un groupe européen coté ou &gt; 500 M€ CA</option>
+      </select>
+    </div>
+    <div class="simulateur-question">
+      <label class="form-label">2. Êtes-vous coté sur la BRVM ?</label>
+      <select class="form-select" id="q2" onchange="calcSimulateur()">
+        <option value="">Sélectionnez</option>
+        <option value="oui">Oui</option>
+        <option value="non">Non</option>
+      </select>
+    </div>
+    <div class="simulateur-question">
+      <label class="form-label">3. Avez-vous des clients ou donneurs d'ordre européens ?</label>
+      <select class="form-select" id="q3" onchange="calcSimulateur()">
+        <option value="">Sélectionnez</option>
+        <option value="oui">Oui — ils nous demandent des données ESG</option>
+        <option value="non">Non — nous opérons uniquement en zone UEMOA</option>
+      </select>
+    </div>
+    <div class="simulateur-question">
+      <label class="form-label">4. Avez-vous déjà publié un rapport ESG ou extra-financier ?</label>
+      <select class="form-select" id="q4" onchange="calcSimulateur()">
+        <option value="">Sélectionnez</option>
+        <option value="non">Non, c'est une première</option>
+        <option value="partiel">Oui, de façon informelle ou partielle</option>
+        <option value="oui">Oui, un rapport structuré chaque année</option>
+      </select>
+    </div>
+    <div class="simulateur-resultat" id="sim-result" style="display:none">
+      <p class="section-eyebrow" style="margin-bottom:12px">Votre recommandation</p>
+      <h3 class="section-title" id="sim-title" style="font-size:24px;margin-bottom:12px"></h3>
+      <p id="sim-desc" style="font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:20px"></p>
+      <button class="btn-primary" onclick="showPage('demo')">Demander une démo sur ce cas →</button>
+    </div>
+    <div class="simulateur-contact">
+      <p class="section-eyebrow" style="margin-bottom:12px">Une question spécifique ?</p>
+      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:400;margin-bottom:12px">Parlons de votre situation.</h3>
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:24px">30 minutes d'échange sans engagement pour clarifier votre contexte réglementaire.</p>
+      <button class="btn-primary" onclick="showPage('contact')">Prendre rendez-vous →</button>
+    </div>
+  </div>
+
+  <!-- ESRS RÉFÉRENTIEL MOCKUP — aperçu plateforme -->
+  <div class="esrs-section">
+    <div class="esrs-section-header">
+      <p class="section-eyebrow">AKILI ESG — Aperçu plateforme</p>
+      <h2>Voici les indicateurs<br>qui s'appliquent à votre entreprise.</h2>
+      <p>Chaque indicateur est traduit, guidé et relié à vos obligations réglementaires réelles — CSRD, Note 35 OHADA, EcoVadis.</p>
+    </div>
+    <div class="esrs-browser">
+      <div class="esrs-bar">
+        <div class="pp-dot" style="background:#FF5F57"></div>
+        <div class="pp-dot" style="background:#FEBC2E"></div>
+        <div class="pp-dot" style="background:#28C840"></div>
+        <div class="esrs-bar-url">localhost:3000 / bibliotheque / indicateur / E1-1_05</div>
+      </div>
+      <div class="esrs-body">
+        <div class="esrs-sidebar">
+          <div class="esrs-sidebar-head">
+            <div class="esrs-avatar">A</div>
+            <div class="esrs-brand"><strong>AKILI ESG</strong><small>Côte d'Ivoire</small></div>
+          </div>
+          <button class="esrs-create">+ Créer</button>
+          <div class="esrs-nav-sec">Données</div>
+          <div class="esrs-nav-item">⚡ Actions</div>
+          <div class="esrs-nav-item">📊 Indicateurs</div>
+          <div class="esrs-nav-item">✅ Tâches</div>
+          <div class="esrs-nav-item">🎯 Objectifs</div>
+          <div class="esrs-nav-item">❓ Questions</div>
+          <div class="esrs-nav-sec">Gestion</div>
+          <div class="esrs-nav-item active">📚 Référentiel ESRS <span class="pp-nav-dot"></span></div>
+          <div class="esrs-nav-item">📋 Campagnes</div>
+          <div class="esrs-nav-item">✔ À valider</div>
+          <div class="esrs-nav-sec">Analyse</div>
+          <div class="esrs-nav-item">📑 Rapports</div>
+        </div>
+        <div class="esrs-content">
+          <div class="esrs-breadcrumb">← Bibliothèque</div>
+          <div class="esrs-tags">
+            <span class="esrs-tag esrs-tag-green">⚡ AKILI ESG</span>
+            <span class="esrs-tag esrs-tag-dark">CSRD</span>
+            <span class="esrs-tag esrs-tag-dark">E1</span>
+            <span class="esrs-tag esrs-tag-dark">E1-1</span>
+            <span class="esrs-tag esrs-tag-dark">E1-1_05</span>
+            <span class="esrs-tag esrs-tag-grey">indicateur</span>
+            <span class="esrs-tag esrs-tag-blue">AKILI</span>
+          </div>
+          <div class="esrs-id"># irWo0LZ1</div>
+          <div class="esrs-indicator-title">Ressources financières allouées au plan d'action (OpeX)</div>
+          <div class="esrs-indicator-sub">Financial resources allocated to action plan (OpeX)</div>
+          <div class="esrs-indicator-desc">Cet indicateur permet de divulguer votre performance RSE aligné conformément à la CSRD et aux normes ESRS.</div>
+          <div class="esrs-status-pills">
+            <span class="esrs-pill">● À faire</span>
+            <span class="esrs-pill">📅 Annuel</span>
+            <span class="esrs-pill">📊 Numérique</span>
+          </div>
+          <div class="esrs-tabs">
+            <div class="esrs-tab active">Détail</div>
+            <div class="esrs-tab">Collecte</div>
+            <div class="esrs-tab">📋 Historique</div>
+            <div class="esrs-tab">📎 Pièces jointes <span style="background:#E8E3DB;border-radius:10px;padding:1px 5px;font-size:8px;">1</span></div>
+          </div>
+          <div class="esrs-instructions-label">Instructions & Guidances</div>
+          <div class="esrs-accordion esrs-accordion-official">
+            <span>📘 Instructions officielles (référentiel ESRS / GRI)</span>
+            <span>+</span>
+          </div>
+          <div class="esrs-accordion esrs-accordion-akili">
+            <span>🟢 Instructions AKILI ESG</span>
+            <span>+</span>
+          </div>
+          <div class="esrs-fields">
+            <div class="esrs-field"><div class="esrs-field-label">Format</div><div class="esrs-field-value"># Numérique</div></div>
+            <div class="esrs-field"><div class="esrs-field-label">Unité</div><div class="esrs-field-value">€ / FCFA</div></div>
+            <div class="esrs-field"><div class="esrs-field-label">Fréquence</div><div class="esrs-field-value">📅 Annuel</div></div>
+            <div class="esrs-field"><div class="esrs-field-label">Caractère</div><div class="esrs-field-value">⚠️ Obligatoire</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;padding-bottom:16px;">
+      <a href="https://calendly.com/karamokobehdiaby/30min" target="_blank" rel="noopener" class="btn-demo-primary">Voir la démo complète sur vos données →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="brand-mark">A</span><span>AKILI ESG</span><span class="nav-slogan" style="margin-left:8px">L'intelligence au service de la durabilité</span></div>
+    <ul class="footer-links"><li><a onclick="showPage('home')">Accueil</a></li><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('blog')">Blog</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul>
+    <p class="footer-legal">© 2025 AKILI ESG · Abidjan, Côte d'Ivoire</p>
+  </footer>
+</div>
+
+<script>
+  function calcSimulateur() {
+    const q1 = document.getElementById('q1').value;
+    const q2 = document.getElementById('q2').value;
+    const q3 = document.getElementById('q3').value;
+    const q4 = document.getElementById('q4').value;
+    if (!q1 || !q2 || !q3 || !q4) return;
+    let title = '', desc = '';
+    if (q1 === 'filiale') {
+      title = 'CSRD / ESRS — Forfait Premium';
+      desc = 'En tant que filiale d\'un groupe européen, vous êtes directement concerné par la CSRD. Votre maison mère a besoin de vos données ESG selon les normes ESRS. Nous recommandons le forfait Premium (Modules 1 à 6) avec formation des équipes locales.';
+    } else if (q2 === 'oui') {
+      title = 'Note 35 OHADA + BRVM — Forfait Essential';
+      desc = 'Votre cotation BRVM vous soumet à des obligations de reporting extra-financier. Le forfait Essential (Modules 1 à 4) avec score RADF est la solution adaptée pour répondre aux attentes des investisseurs et régulateurs.';
+    } else if (q3 === 'oui' && q1 === 'eti') {
+      title = 'VSME + Note 35 OHADA — Forfait Essential';
+      desc = 'Vos clients européens vous demandent des données ESG. Le standard VSME est le premier pas recommandé, complété par la Note 35 OHADA. Le forfait Essential couvre les deux.';
+    } else if (q1 === 'pme' && q3 === 'oui') {
+      title = 'VSME — Forfait Starter';
+      desc = 'Pour répondre aux demandes de vos partenaires européens, le standard VSME est votre priorité. Le forfait Starter (Modules 1 + 3 + 4) vous permet de produire un premier rapport crédible en 8 semaines.';
+    } else if (q3 === 'non') {
+      title = 'Note 35 OHADA — Forfait Starter';
+      desc = 'Sans obligation européenne directe, la Note 35 OHADA est votre cadre de référence. Le forfait Starter est idéal pour une première publication structurée, avec score RADF.';
+    } else {
+      title = 'Diagnostic ESG personnalisé — Module 01';
+      desc = 'Votre situation mérite une analyse sur mesure. Nous recommandons de commencer par le Module 01 (Diagnostic ESG et double matérialité) pour cartographier précisément vos obligations.';
+    }
+    document.getElementById('sim-title').textContent = title;
+    document.getElementById('sim-desc').textContent = desc;
+    document.getElementById('sim-result').style.display = 'block';
+  }
+</script>
+</body>
+</html>
