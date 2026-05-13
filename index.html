@@ -72,16 +72,16 @@
   .hero-product-shot { width: min(100%, 760px); margin: 0 auto; background: var(--cream); border: 1px solid rgba(27,50,40,0.12); border-radius: 6px; padding: 8px; box-shadow: 0 30px 70px rgba(27,50,40,0.18); transform: none; }
   .hero-product-shot img { display: block; width: 100%; height: auto; border-radius: 4px; }
   .hero-product-caption { margin-top: 12px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
-  .radf-card { background: var(--forest); border-radius: 4px; padding: 40px; position: relative; overflow: hidden; }
-  .radf-card::after { content: ''; position: absolute; top: 0; right: 0; width: 4px; height: 100%; background: var(--ochre); }
-  .radf-label { font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ochre); margin-bottom: 16px; }
-  .radf-title { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--cream); }
-  .radf-body { font-size: 13px; font-weight: 300; color: rgba(245,240,230,0.6); }
-  .radf-score-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 4px; overflow: hidden; margin-top: 28px; }
-  .score-cell { background: var(--cream); padding: 20px 16px; }
-  .score-val { font-family: var(--font-display); font-size: 32px; font-weight: 400; color: var(--forest); }
+  .radf-card { background: var(--forest); border-radius: 6px; padding: 52px 48px; position: relative; overflow: hidden; }
+  .radf-card::after { content: ''; position: absolute; top: 0; right: 0; width: 5px; height: 100%; background: var(--ochre); }
+  .radf-label { font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ochre); margin-bottom: 18px; }
+  .radf-title { font-family: var(--font-display); font-size: 34px; font-weight: 400; color: var(--cream); line-height: 1.2; margin-bottom: 14px; }
+  .radf-body { font-size: 14px; font-weight: 300; color: rgba(245,240,230,0.65); line-height: 1.75; }
+  .radf-score-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 6px; overflow: hidden; margin-top: 36px; }
+  .score-cell { background: var(--cream); padding: 28px 18px; text-align: center; }
+  .score-val { font-family: var(--font-display); font-size: 44px; font-weight: 400; color: var(--forest); line-height: 1; }
   .score-val.high { color: var(--ochre); }
-  .score-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+  .score-label { font-size: 12px; color: var(--text-muted); margin-top: 8px; letter-spacing: .02em; }
   .home-references .ref-logos { display: flex; flex-wrap: wrap; gap: 8px; }
   .ref-pill { font-size: 12px; color: var(--text-muted); border: 1px solid var(--border); border-radius: 2px; padding: 6px 14px; background: var(--cream); }
   .strip { background: var(--forest); padding: 40px 64px; display: flex; gap: 64px; flex-wrap: wrap; }
@@ -648,168 +648,85 @@
     .platform-cards { grid-template-columns: 1fr; }
     .db-cards-grid { grid-template-columns: 1fr; }
   }
-  /* ========== SECTION PROCESSUS (4 ÉTAPES) – STYLES AKILI ESG ========== */
-.process-section {
-  background: var(--cream-dark);
-  padding: 80px 64px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.process-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 64px auto;
-}
-
-.process-header h2 {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 300;
-  color: var(--forest);
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-.process-header p {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  background: var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 56px;
-}
-
-.process-step {
-  background: var(--cream);
-  padding: 40px 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
-  min-height: 320px;
-}
-
-.process-step:hover {
-  box-shadow: inset 0 0 0 1px var(--ochre);
-}
-
-.process-step-tag {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ochre);
-  border: 1px solid rgba(200,133,58,0.3);
-  border-radius: 2px;
-  padding: 4px 12px;
-  display: inline-block;
-  width: fit-content;
-  margin-bottom: 24px;
-}
-
-.process-step-title {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--forest);
-  line-height: 1.3;
-  margin-bottom: 16px;
-}
-
-.process-step-desc {
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 24px;
-  flex: 1;
-}
-
-.process-step-num {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 300;
-  color: var(--ochre);
-  opacity: 0.4;
-  line-height: 1;
-  align-self: flex-end;
-  margin-top: 20px;
-}
-
-.process-cta {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.process-cta .btn-primary:first-of-type {
-  background: var(--ochre);
-  color: var(--cream);
-}
-
-.process-cta .btn-primary:first-of-type:hover {
-  background: var(--ochre-light);
-}
-
-.process-cta .btn-primary:last-of-type {
-  background: transparent;
-  color: var(--forest);
-  border: 1px solid var(--border);
-}
-
-.process-cta .btn-primary:last-of-type:hover {
-  background: var(--cream-dark);
-  border-color: var(--ochre);
-}
-
-/* Tablette */
-@media (max-width: 900px) {
-  .process-section {
-    padding: 56px 32px;
+  /* ── SECTION COMMENT ÇA MARCHE (4 ÉTAPES — palette AKILI : forest + ochre) ── */
+  .process-section { background: var(--forest); padding: 0; border-top: none; }
+  .process-header { text-align: center; padding: 80px 64px 56px; }
+  .process-header .section-eyebrow { color: var(--ochre); }
+  .process-header h2 { font-family: var(--font-display); font-size: clamp(32px, 3.5vw, 52px); font-weight: 300; color: var(--cream); margin-bottom: 16px; line-height: 1.15; }
+  .process-header h2 em { font-style: italic; color: var(--ochre-light); }
+  .process-header p { font-size: 15px; color: rgba(245,240,230,0.5); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+  .process-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .process-step { display: flex; flex-direction: column; justify-content: space-between; padding: 56px 56px 48px; min-height: 360px; position: relative; overflow: hidden; border: 1px solid rgba(245,240,230,0.06); border-top: 4px solid var(--ochre); background: var(--forest); }
+  .process-step:nth-child(even) { background: var(--forest-mid); }
+  .process-step-num { font-family: var(--font-display); font-size: 160px; font-weight: 300; line-height: 1; color: rgba(200,133,58,0.18); position: absolute; bottom: -16px; right: 28px; width: auto; height: auto; border-radius: 0; background: none; display: block; }
+  .process-step-tag { font-size: 9px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ochre); border: 1px solid rgba(200,133,58,0.4); border-radius: 2px; padding: 4px 12px; display: inline-block; width: fit-content; margin-bottom: 24px; }
+  .process-step-title { font-family: var(--font-display); font-size: clamp(26px, 2.4vw, 38px); font-weight: 300; color: var(--cream); margin-bottom: 16px; line-height: 1.2; position: relative; z-index: 1; }
+  .process-step-desc { font-size: 14px; font-weight: 300; color: rgba(245,240,230,0.65); line-height: 1.8; max-width: 400px; position: relative; z-index: 1; }
+  .process-cta { text-align: center; padding: 56px 64px 80px; background: var(--forest); }
+  @media (max-width: 900px) {
+    .process-header { padding: 56px 24px 40px; }
+    .process-steps { grid-template-columns: 1fr; }
+    .process-step { min-height: 280px; padding: 40px 32px; }
+    .process-cta { padding: 40px 24px 60px; }
   }
-  .process-steps {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    background: transparent;
+  @media (max-width: 600px) {
+    .process-step-title { font-size: 26px; }
+    .process-step-num { font-size: 120px; }
   }
-  .process-step {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    min-height: auto;
-  }
-  .process-step-num {
-    font-size: 36px;
-  }
-}
 
-/* Mobile */
-@media (max-width: 600px) {
-  .process-section {
-    padding: 48px 20px;
+  /* ── SECTION PERTES SPLIT (problème / solution) — porté d'AKILI ── */
+  .pertes-split { background: var(--forest); padding: 96px 64px; }
+  .pertes-split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .pertes-split-left h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 42px); font-weight: 300; color: var(--cream); line-height: 1.15; margin-bottom: 12px; }
+  .pertes-split-left h2 em { font-style: italic; color: var(--ochre-light); }
+  .pertes-split-intro { font-size: 14px; font-weight: 300; color: rgba(245,240,230,0.55); line-height: 1.85; margin-bottom: 36px; }
+  .pertes-list { display: flex; flex-direction: column; gap: 0; }
+  .pertes-list-item { padding: 20px 0; border-bottom: 1px solid rgba(245,240,230,0.08); display: flex; gap: 16px; align-items: flex-start; }
+  .pertes-list-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; opacity: 0.8; }
+  .pertes-list-title { font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 4px; }
+  .pertes-list-desc { font-size: 12px; font-weight: 300; color: rgba(245,240,230,0.5); line-height: 1.65; }
+  .pertes-list-badge { display: inline-block; font-size: 9px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ochre); border: 1px solid rgba(200,133,58,0.3); border-radius: 2px; padding: 2px 8px; margin-top: 6px; }
+  .pertes-solution-card { background: var(--cream); border-radius: 6px; padding: 48px 40px; position: sticky; top: 96px; }
+  .pertes-solution-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ochre); margin-bottom: 20px; }
+  .pertes-solution-title { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--forest); line-height: 1.2; margin-bottom: 16px; }
+  .pertes-solution-sub { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.8; margin-bottom: 28px; }
+  .pertes-solution-checks { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .pertes-check-item { display: flex; gap: 12px; align-items: flex-start; }
+  .pertes-check-icon { width: 20px; height: 20px; border-radius: 50%; background: rgba(13,110,78,0.12); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--forest); margin-top: 1px; }
+  .pertes-check-text { font-size: 13px; font-weight: 400; color: var(--forest); line-height: 1.55; }
+  .pertes-radf-chip { display: inline-flex; align-items: center; gap: 8px; background: var(--forest); color: var(--cream); border-radius: 4px; padding: 10px 16px; font-size: 12px; font-weight: 400; margin-bottom: 24px; }
+  .pertes-radf-chip strong { color: var(--ochre); font-weight: 600; }
+  @media (max-width: 900px) {
+    .pertes-split { padding: 64px 24px; }
+    .pertes-split-grid { grid-template-columns: 1fr; gap: 40px; }
+    .pertes-solution-card { position: static; padding: 36px 28px; }
   }
-  .process-steps {
-    grid-template-columns: 1fr;
-    gap: 16px;
+
+  /* ── CARTES SERVICES (page services — 3 cartes Bilan / EcoVadis / Stratégie) ── */
+  .services-cards-section { padding: 80px 64px; background: var(--cream-dark); border-bottom: 1px solid var(--border); }
+  .services-cards-header { text-align: center; margin-bottom: 56px; }
+  .services-cards-header h2 { font-family: var(--font-display); font-size: clamp(28px,3vw,44px); font-weight: 300; color: var(--forest); margin-bottom: 10px; }
+  .services-cards-header p { font-size: 14px; color: var(--text-muted); max-width: 520px; margin: 0 auto; }
+  .services-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card { background: var(--cream); border-radius: 6px; padding: 40px 32px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0; position: relative; transition: box-shadow .2s, transform .2s; }
+  .service-card:hover { box-shadow: 0 8px 32px rgba(27,50,40,0.1); transform: translateY(-2px); }
+  .service-card-badge { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; background: var(--ochre); color: var(--cream); border-radius: 2px; padding: 3px 10px; margin-bottom: 20px; align-self: flex-start; }
+  .service-card-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
+  .service-card-icon.green { background: rgba(13,110,78,0.1); }
+  .service-card-icon.ochre { background: rgba(200,133,58,0.12); }
+  .service-card-icon.blue { background: rgba(27,74,138,0.1); }
+  .service-card-title { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--forest); margin-bottom: 12px; line-height: 1.2; }
+  .service-card-desc { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; }
+  .service-card-bullets { display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; flex: 1; }
+  .service-bullet { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 400; color: var(--forest); }
+  .service-bullet::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--ochre); flex-shrink: 0; }
+  .service-card-cta { font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ochre); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); cursor: pointer; background: none; border-left: none; border-right: none; border-bottom: none; transition: gap .2s; }
+  .service-card-cta:hover { gap: 8px; }
+  .module-tag.diff { color: var(--ochre); border-color: rgba(200,133,58,0.4); }
+  @media (max-width: 900px) {
+    .services-cards-section { padding: 56px 24px; }
+    .services-cards-grid { grid-template-columns: 1fr; gap: 16px; }
   }
-  .process-cta {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .process-cta .btn-primary {
-    width: 100%;
-    text-align: center;
-  }
-}
   
 </style>
 </head>
@@ -866,17 +783,13 @@
         <p class="hero-tagline">En Afrique de l'Ouest, nous transformons vos engagements RSE – stratégie sur mesure, EcoVadis, Note 35 OHADA, bilan carbone, indice RADF – en un récit sourcé et en leviers de croissance durable pour convaincre financeurs, clients et partenaires.</p>
         
         <div class="hero-ctas">
-          <button class="btn-primary" onclick="showPage('simulateur')">Évaluer mon risque ESG</button>
-          <button class="btn-ghost" onclick="document.getElementById('pertes').scrollIntoView({behavior:'smooth'})">Ce que vous perdez sans ESG →</button>
+          <button class="btn-primary" onclick="showPage('simulateur')">Démarrer mon diagnostic gratuit →</button>
+          <p style="font-size:11px;color:rgba(245,240,230,0.4);margin-top:10px;font-weight:300;letter-spacing:.03em;">Résultat en 5 minutes · Sans engagement</p>
         </div>
       </div>
       <p class="hero-stat">Abidjan · Côte d'Ivoire · Zone OHADA</p>
     </div>
     <div class="hero-right">
-      <figure class="hero-product-shot">
-        <img src="assets/akili-platform-indicator.png" alt="Interface AKILI ESG affichant un indicateur CSRD et ses guidances">
-        <figcaption class="hero-product-caption">Aperçu de la plateforme AKILI ESG</figcaption>
-      </figure>
       <div class="radf-card">
         <p class="radf-label">Notre indice propriétaire</p>
         <h2 class="radf-title">Indice RADF<br>Cohérence discours‑pratiques</h2>
@@ -890,13 +803,25 @@
       <div class="home-references">
         <p class="ref-label">Référentiels maîtrisés</p>
         <div class="ref-logos">
-          <span class="ref-pill featured">Taxonomie Ivoirienne</span><span class="ref-pill featured">CSRD</span>
-          <span class="ref-pill featured">Note 35 OHADA</span><span class="ref-pill featured">VSME</span>
-          <span class="ref-pill featured">Double matérialité</span><span class="ref-pill featured">GRI</span>
-          <span class="ref-pill featured">Bilan Carbone</span>
-        </div> <p style="font-size: 11px; margin-top: 12px; color: var(--text-muted);"> Alignez vos bilans sectoriels et vos performances RSE sur la Taxonomie Ivoirienne.</p>
+          <span class="ref-pill featured">Taxonomie Ivoirienne</span><span class="ref-pill">Note 35 OHADA</span>
+          <span class="ref-pill">Bilan Carbone</span><span class="ref-pill">Double matérialité</span>
+          <span class="ref-pill">EcoVadis</span><span class="ref-pill">VSME</span>
+          <span class="ref-pill featured">CSRD</span><span class="ref-pill">GRI</span>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="strip">
+    <div class="strip-item"><span class="strip-num">3</span><span class="strip-desc">services phares</span></div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-num">8</span><span class="strip-desc">semaines de production</span></div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-num">1</span><span class="strip-desc">indice propriétaire RADF</span></div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-num">EcoVadis</span><span class="strip-desc">préparation à l'évaluation</span></div>
+    <div class="strip-divider"></div>
+    <div class="strip-item"><span class="strip-num">OHADA</span><span class="strip-desc">ancrage réglementaire local</span></div>
   </div>
 
 
@@ -1024,103 +949,35 @@
     </div>
   </div>
   <div class="process-cta">
-    <button class="btn-primary" onclick="showPage('simulateur')">Démarrer mon diagnostic →</button>
-    <button class="btn-primary" onclick="showPage('services')">Voir nos services →</button>
+    <button class="btn-primary" onclick="showPage('simulateur')" style="margin-right:12px">Démarrer mon diagnostic →</button>
+    <button class="btn-primary" onclick="showPage('services')" style="background:transparent;color:var(--cream);border:1px solid rgba(245,240,230,0.25)">Voir nos services →</button>
   </div>
 </div>
 
-
-
-
-  
-<!-- PLATFORM PREVIEW — Module Climat juste sous le hero -->
-<div class="platform-preview">
-  <div class="platform-preview-header">
-    <p class="section-eyebrow">AKILI ESG — Module Climat</p>
-    <h2>Pilotez vos indicateurs climat,<br>du bilan à la preuve.</h2>
-    <p>Suivez vos émissions, comparez vos trajectoires et transformez vos données carbone en décisions lisibles pour vos équipes, vos financeurs et vos auditeurs.</p>
-    <div class="platform-proof-pills">
-      <span class="platform-proof-pill">Bilan GES</span>
-      <span class="platform-proof-pill">Trajectoire 2030</span>
-      <span class="platform-proof-pill">CSRD · E1</span>
-    </div>
-  </div>
-  <div class="climate-browser">
-    <div class="climate-bar">
-      <div class="climate-dot" style="background:#FF5F57"></div>
-      <div class="climate-dot" style="background:#FEBC2E"></div>
-      <div class="climate-dot" style="background:#28C840"></div>
-      <div class="climate-url">localhost:3000 / module-climat / bilans</div>
-    </div>
-    <img class="climate-product-image" src="assets/akili-module-climat.png" alt="Dashboard AKILI ESG du module climat montrant l'évolution des émissions de GES">
-  </div>
-</div>
-
-  <div class="strip">
-    <div class="strip-item"><span class="strip-num">6</span><span class="strip-desc">modules de service</span></div>
-    <div class="strip-divider"></div>
-    <div class="strip-item"><span class="strip-num">8</span><span class="strip-desc">semaines de production</span></div>
-    <div class="strip-divider"></div>
-    <div class="strip-item"><span class="strip-num">1</span><span class="strip-desc">indice propriétaire RADF</span></div>
-    <div class="strip-divider"></div>
-    <div class="strip-item"><span class="strip-num">EcoVadis</span><span class="strip-desc">préparation à l'évaluation</span></div>
-    <div class="strip-divider"></div>
-    <div class="strip-item"><span class="strip-num">OHADA</span><span class="strip-desc">ancrage réglementaire local</span></div>
-  </div>
-  <!-- SECTION PLATEFORME : 4 BOUTONS FEATURES -->
-  <div class="platform-section">
-    <div class="platform-header">
-      <p class="section-eyebrow">AKILI ESG — Plateforme</p>
-      <h2>Évaluez votre organisation<br>avec notre outil de diagnostic RSE</h2>
-      <p>La plateforme AKILI ESG couvre l'ensemble du cycle de reporting — du diagnostic initial à la publication du rapport final.</p>
-    </div>
-    <div class="platform-cards">
-      <a class="platform-card" onclick="showPage('simulateur')">
-        <div class="pc-icon">🎯</div>
-        <div class="pc-title">Évaluer sa maturité</div>
-        <div class="pc-desc">Mesurez votre niveau de préparation ESG en 5 minutes avec notre outil de diagnostic interactif.</div>
-        <div class="pc-arrow">Lancer le diagnostic →</div>
-      </a>
-      <a class="platform-card" onclick="showPage('services')">
-        <div class="pc-icon">🗺️</div>
-        <div class="pc-title">Construire sa stratégie</div>
-        <div class="pc-desc">Identifiez vos sujets matériels, hiérarchisez vos priorités ESG et construisez un plan d'action structuré.</div>
-        <div class="pc-arrow">Voir les modules →</div>
-      </a>
-      <a class="platform-card" onclick="openSaas('/dashboard')">
-        <div class="pc-icon">📊</div>
-        <div class="pc-title">Piloter ses indicateurs</div>
-        <div class="pc-desc">Collectez, validez et suivez tous vos indicateurs ESRS en temps réel. Campagnes multi-contributeurs incluses.</div>
-        <div class="pc-arrow">Voir la plateforme →</div>
-      </a>
-      <a class="platform-card" onclick="openSaas('/reports')">
-        <div class="pc-icon">📄</div>
-        <div class="pc-title">Préparer son reporting</div>
-        <div class="pc-desc">Générez automatiquement votre rapport RSE — CSRD, Note 35 OHADA ou EcoVadis — en quelques semaines.</div>
-        <div class="pc-arrow">Découvrir AKILI ESG →</div>
-      </a>
-    </div>
-  </div>
-
-  <div class="pertes-section" id="pertes">
-    <div class="pertes-header">
-      <div>
-        <p class="section-eyebrow" style="color:var(--ochre)">Les enjeux</p>
-        <h2 class="section-title" style="color:var(--cream)">Ce que votre entreprise<br><em style="color:var(--ochre-light)">risque sans ESG structuré.</em></h2>
+  <!-- ═══ AKILI ESG — MODULE CLIMAT (aperçu plateforme) ═══ -->
+  <div class="platform-preview">
+    <div class="platform-preview-header">
+      <p class="section-eyebrow">AKILI ESG — Module Climat</p>
+      <h2>Pilotez vos indicateurs climat,<br>du bilan à la preuve.</h2>
+      <p>Suivez vos émissions, comparez vos trajectoires et transformez vos données carbone en décisions lisibles pour vos équipes, vos financeurs et vos auditeurs.</p>
+      <div class="platform-proof-pills">
+        <span class="platform-proof-pill">Bilan GES</span>
+        <span class="platform-proof-pill">Trajectoire 2030</span>
+        <span class="platform-proof-pill">CSRD · E1</span>
       </div>
-      <p class="pertes-intro">Un rapport ESG mal construit, c'est un dossier de financement affaibli. Un appel d'offres perdu face à un concurrent mieux préparé. Une filiale européenne qui remet en question votre chaîne de valeur. La rigueur sur le fond et la clarté sur la forme ne sont pas des options — elles sont la condition de votre crédibilité.</p>
     </div>
-    <div class="pertes-grid">
-      <div class="perte-card"><div class="perte-icon">🏦</div><p class="perte-title">Accès au financement vert</p><p class="perte-desc">Les DFI, fonds d'impact et banques commerciales actifs en zone UEMOA conditionnent de plus en plus leurs décisions à la qualité de votre reporting extra-financier.</p><span class="perte-tag">BRVM · DFI · Fonds impact</span></div>
-      <div class="perte-card"><div class="perte-icon">🤝</div><p class="perte-title">Contrats avec vos donneurs d'ordre européens</p><p class="perte-desc">Soumis à la CSRD, vos clients et partenaires européens collectent des données ESG auprès de toute leur chaîne de valeur — y compris leurs sous-traitants ivoiriens.</p><span class="perte-tag">CSRD · Chaîne de valeur</span></div>
-      <div class="perte-card"><div class="perte-icon">📊</div><p class="perte-title">Crédibilité auprès des investisseurs</p><p class="perte-desc">Un rapport sans preuves vérifiables ni indicateurs solides ne résiste pas à l'analyse d'un investisseur institutionnel. L'indice RADF mesure exactement cet écart.</p><span class="perte-tag">Investisseurs · RADF</span></div>
-      <div class="perte-card"><div class="perte-icon">⚖️</div><p class="perte-title">Conformité réglementaire OHADA</p><p class="perte-desc">La Note 35 OHADA impose des obligations de publication aux entreprises d'une certaine taille. Le non-respect expose à des risques juridiques et à une perte de confiance des parties prenantes.</p><span class="perte-tag">Note 35 · OHADA</span></div>
-    </div>
-    <div class="pertes-cta-row">
-      <button class="btn-primary" onclick="showPage('contact')">Parler de mon exposition →</button>
-      <button class="btn-ghost" onclick="showPage('services')" style="color:rgba(245,240,230,0.7);border-color:rgba(245,240,230,0.2)">Voir nos solutions</button>
+    <div class="climate-browser">
+      <div class="climate-bar">
+        <div class="climate-dot" style="background:#FF5F57"></div>
+        <div class="climate-dot" style="background:#FEBC2E"></div>
+        <div class="climate-dot" style="background:#28C840"></div>
+        <div class="climate-url">localhost:3000 / module-climat / bilans</div>
+      </div>
+      <img class="climate-product-image" src="assets/akili-module-climat.png" alt="Dashboard AKILI ESG du module climat montrant l'évolution des émissions de GES">
     </div>
   </div>
+
+  <!-- ═══ NOTRE APPROCHE ═══ -->
   <div class="home-about">
     <div class="about-left">
       <p class="section-eyebrow">Notre approche</p>
@@ -1138,6 +995,29 @@
         <div class="diff-item"><span class="diff-num">04</span><div><p class="diff-title">Production complète, bout en bout</p><p class="diff-desc">Du diagnostic à la publication — rédaction, design éditorial, mise en page — sans sous-traiter la vision stratégique.</p></div></div>
       </div>
     </div>
+  </div>
+
+  <!-- ═══ TÉMOIGNAGES ═══ -->
+  <div class="testimonials-section">
+    <p class="section-eyebrow">Ils nous font confiance</p>
+    <h2 class="section-title">Ce que disent<br><em>nos clients.</em></h2>
+    <div class="testimonials-grid">
+      <div class="testi-card"><div class="testi-quote-mark">"</div><p class="testi-text">AKILI ESG nous a permis de structurer notre premier rapport VSME en moins de trois mois. Le score RADF nous a donné une vision claire de ce que nos partenaires financiers allaient retenir — et des points à corriger avant publication.</p><div class="testi-separator"></div><div class="testi-author"><span class="testi-name">Adjoua M. Kouassi</span><span class="testi-company">Directrice RSE · PME agroalimentaire, Abidjan</span><div class="testi-score"><span class="testi-radf">RADF Score : B+</span></div></div></div>
+      <div class="testi-card"><div class="testi-quote-mark">"</div><p class="testi-text">La rigueur méthodologique de Karamoko est rare sur le marché ivoirien. Nous avons utilisé le rapport produit directement dans notre dossier de levée de fonds auprès d'un investisseur institutionnel européen. Résultat : zéro question sur le volet ESG.</p><div class="testi-separator"></div><div class="testi-author"><span class="testi-name">Ibrahim Sangaré</span><span class="testi-company">Directeur Financier · ETI industrielle, zone UEMOA</span><div class="testi-score"><span class="testi-radf">RADF Score : A</span></div></div></div>
+      <div class="testi-card"><div class="testi-quote-mark">"</div><p class="testi-text">La veille réglementaire mensuelle nous fait économiser des heures de travail. Elle est devenue notre référence interne sur la CSRD et la Note 35 OHADA — bien plus fiable que ce que nous trouvions ailleurs sur le marché.</p><div class="testi-separator"></div><div class="testi-author"><span class="testi-name">Marie-Claire Brou</span><span class="testi-company">Responsable RSE · Filiale d'un groupe français, Abidjan</span><div class="testi-score"><span class="testi-radf">Abonnement Veille</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- ═══ CTA FINALE ═══ -->
+  <div style="background:var(--forest-mid);padding:96px 64px;text-align:center;">
+    <p style="font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);margin-bottom:20px;">Passez à l'action</p>
+    <h2 style="font-family:var(--font-display);font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--cream);line-height:1.15;margin-bottom:16px;">Prêt à structurer<br><em style="font-style:italic;color:var(--ochre-light)">votre démarche ESG ?</em></h2>
+    <p style="font-size:15px;font-weight:300;color:rgba(245,240,230,0.6);max-width:520px;margin:0 auto 40px;line-height:1.8;">30 minutes d'échange suffisent pour identifier votre niveau de préparation, votre référentiel prioritaire et le module adapté à votre situation.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-primary" onclick="showPage('simulateur')" style="font-size:13px;padding:16px 32px;">Démarrer mon diagnostic gratuit →</button>
+      <a href="https://calendly.com/karamokobehdiaby/30min" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,240,230,0.75);border:1px solid rgba(245,240,230,0.2);padding:15px 32px;border-radius:2px;text-decoration:none;transition:all .2s;">📅 Prendre un RDV →</a>
+    </div>
+    <p style="font-size:11px;color:rgba(245,240,230,0.3);margin-top:20px;">Abidjan · Côte d'Ivoire · Zone OHADA · CSRD · EcoVadis</p>
   </div>
 
 
@@ -1161,11 +1041,70 @@
   <div class="services-hero">
     <div>
       <p class="section-eyebrow">Nos services</p>
-      <h1 class="page-title">Une offre<br>modulaire,<br>à la carte.</h1>
+      <h1 class="page-title">Nos expertises<br>à votre service.</h1>
     </div>
-    <p class="page-intro">Cinq modules indépendants, activables selon votre avancement et vos ressources. De l'audit initial à la publication finale, en passant par notre diagnostic exclusif RADF. Chaque brique peut être commandée séparément ou intégrée dans une mission complète.</p>
+    <p class="page-intro">Trois services complémentaires, conçus pour les PME et ETI d'Afrique de l'Ouest. Chacun répond à un besoin précis — de la mesure carbone à la stratégie RSE globale, en passant par la préparation aux évaluations EcoVadis.</p>
   </div>
+
+  <!-- ═══ 3 CARTES SERVICES ═══ -->
+  <div class="services-cards-section">
+    <div class="services-cards-header">
+      <p class="section-eyebrow">Ce que nous faisons</p>
+      <h2>Des solutions complètes pour répondre<br>à tous vos enjeux RSE.</h2>
+      <p>Transformez vos contraintes réglementaires en opportunités concrètes — avec une approche 100 % pragmatique, ancrée en Afrique de l'Ouest.</p>
+    </div>
+    <div class="services-cards-grid">
+
+      <!-- Carte 1 — Bilan Carbone -->
+      <div class="service-card">
+        <div class="service-card-icon green">🌿</div>
+        <h3 class="service-card-title">Bilan Carbone</h3>
+        <p class="service-card-desc">Mesurez, analysez et réduisez votre empreinte carbone avec une méthodologie certifiée. Nous accompagnons les entreprises étape par étape, avec des formats adaptés à leur niveau de maturité, leurs contraintes et leurs enjeux business.</p>
+        <div class="service-card-bullets">
+          <span class="service-bullet">Scopes 1, 2 et 3</span>
+          <span class="service-bullet">Plan de réduction</span>
+          <span class="service-bullet">Reporting conforme CSRD / GRI</span>
+        </div>
+        <button class="service-card-cta" onclick="showPage('contact')">Nous contacter →</button>
+      </div>
+
+      <!-- Carte 2 — EcoVadis (badge Expertise phare) -->
+      <div class="service-card">
+        <span class="service-card-badge">Expertise phare</span>
+        <div class="service-card-icon ochre">🏅</div>
+        <h3 class="service-card-title">Accompagnement EcoVadis</h3>
+        <p class="service-card-desc">Référentiel largement utilisé par les donneurs d'ordres pour évaluer la maturité RSE de leurs fournisseurs. Nous vous aidons à structurer des réponses claires, cohérentes et valorisables dans le temps.</p>
+        <div class="service-card-bullets">
+          <span class="service-bullet">Audit de maturité</span>
+          <span class="service-bullet">Plan d'actions ciblé</span>
+          <span class="service-bullet">Accompagnement à la notation</span>
+        </div>
+        <button class="service-card-cta" onclick="showPage('contact')">Nous contacter →</button>
+      </div>
+
+      <!-- Carte 3 — Stratégie RSE -->
+      <div class="service-card">
+        <div class="service-card-icon blue">🗺️</div>
+        <h3 class="service-card-title">Stratégie RSE</h3>
+        <p class="service-card-desc">Structurez une démarche RSE cohérente et adaptée à votre entreprise. Une approche pragmatique pour passer d'actions isolées à une vision claire et pilotable, ancrée dans le contexte réglementaire ouest-africain.</p>
+        <div class="service-card-bullets">
+          <span class="service-bullet">Taxonomie Ivoirienne</span>
+          <span class="service-bullet">Note 35 OHADA</span>
+          <span class="service-bullet">ISO 26000</span>
+          <span class="service-bullet">Stratégie sur-mesure</span>
+        </div>
+        <button class="service-card-cta" onclick="showPage('contact')">Nous contacter →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ NOTRE PROCESSUS (ex-modules) ═══ -->
   <div class="modules-grid">
+    <div style="padding: 48px 40px 8px; border-bottom: 1px solid var(--border);">
+      <p class="section-eyebrow">Notre processus</p>
+      <h2 class="section-title" style="font-size: clamp(28px,3vw,40px); margin-bottom: 0;">Comment nous travaillons,<br><em>étape par étape.</em></h2>
+    </div>
     <div class="module-row"><div class="module-num-cell"><span class="module-num">01</span></div><div class="module-main"><span class="module-tag">Porte d'entrée</span><h3 class="module-name">Diagnostic ESG<br>et double matérialité</h3><p class="module-desc">Cartographie complète de vos enjeux ESG selon les ESRS et la Note 35 OHADA. Identification des sujets matériels. Scoring RADF initial.</p></div><div class="module-detail"><p class="module-detail-label">Livrables</p><p class="module-deliverable">Rapport de diagnostic 15 pages · Matrice de double matérialité · Fiche de score RADF initiale · Benchmark pairs sectoriels</p></div></div>
     <div class="module-row"><div class="module-num-cell"><span class="module-num">02</span></div><div class="module-main"><span class="module-tag">Fond</span><h3 class="module-name">Architecture narrative<br>et collecte de données</h3><p class="module-desc">Structuration du plan éditorial, interviews internes, collecte et nettoyage des données brutes. Adaptation au référentiel retenu.</p></div><div class="module-detail"><p class="module-detail-label">Livrables</p><p class="module-deliverable">Chemin de fer détaillé · Plan de collecte · Compte-rendu d'interviews · Base de données KPI structurée</p></div></div>
     <div class="module-row"><div class="module-num-cell"><span class="module-num">03</span></div><div class="module-main"><span class="module-tag diff">Différenciant RADF</span><h3 class="module-name">Rédaction et validation<br>par l'indice RADF</h3><p class="module-desc">Rédaction complète du rapport avec application de notre indice RADF à chaque section. Score par chapitre et score global. Recommandations avant publication.</p></div><div class="module-detail"><p class="module-detail-label">Livrables</p><p class="module-deliverable">Rapport rédigé intégralement · Fiche de score RADF annotée · Note de recommandations rédactionnelles</p></div></div>
